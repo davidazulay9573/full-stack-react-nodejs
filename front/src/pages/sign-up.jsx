@@ -1,15 +1,13 @@
 import Form from "../components/Form";
+import PageHeader from "../components/PageHeader";
 import { useFormik } from "formik";
-import formikValidation from "../utils/formikValidation";
 import Joi from "joi";
-
-import { Navigate } from "react-router-dom";
+import { formikValidation, passwordRegex } from "../utils/formikValidation";
 import useAuth from "../hooks/useAuth";
-
+import { Navigate, Link } from "react-router-dom";
 
 function SignUp() {
- const [user,,,SignUp] = useAuth()
-
+  const [user, , , SignUp] = useAuth();
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
     { name: "email", lable: "Email", type: "email" },
@@ -23,7 +21,7 @@ function SignUp() {
       email: "",
       password: "",
     },
-    
+
     validate(values) {
       return formikValidation(values)(
         Joi.object({
@@ -37,24 +35,30 @@ function SignUp() {
             .min(6)
             .max(250)
             .required()
-            .regex(
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@%$#^&*\-_])(?=(.*\d){4,})[a-zA-Z!@%$#^&*\-_\d]{8,}$/
-            )
+            .regex(passwordRegex)
             .label("Password"),
           name: Joi.string().min(2).max(250).required().label("Name"),
         })
       );
     },
-    async onSubmit(values) {
-     SignUp({ ...values, biz: true },'/sign-in');
+    onSubmit(values) {
+      SignUp({ ...values, biz: false }, "/sign-in");
     },
   });
 
   if (user) return <Navigate to="/" />;
   return (
     <div>
-      <div className="container-md m-5 w-50 text-center">
+      <div className="container-md w-50 text-center">
+        <PageHeader
+          title="Sign Up"
+          description="Please enter your details! "
+        ></PageHeader>
+
         <Form inputs={inputs} formik={formik} buttonTitle="Sign-Up"></Form>
+        <p>
+          You already have an account? <Link to="/sign-in">Sign-in</Link>{" "}
+        </p>
       </div>
     </div>
   );

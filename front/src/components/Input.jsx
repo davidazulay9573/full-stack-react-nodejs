@@ -1,7 +1,7 @@
 function Input({ lable, name, error, ...rest }) {
   return (
     <>
-      <label htmlFor={name}>{}</label>
+      <label htmlFor={name}></label>
       {error && <span className="text-danger ms-1">*</span>}
       <input
         {...rest}

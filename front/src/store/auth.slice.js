@@ -1,38 +1,40 @@
 import { createSlice, createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import userService from "../services/userService";
-import { extractErrorMessage } from "../utils/extractErrorMessage";
-
-const initialState = {
-  user: userService.getUser(),
-  isLoading: false,
-};
 
 
-export const register = createAsyncThunk("auth-register", async (user, thunkAPI) => {
-  try {
-    return (await userService.createUser(user)).data;
-  } catch ({ response }) {
-    return thunkAPI.rejectWithValue(extractErrorMessage(response));
+export const register = createAsyncThunk(
+  "auth-register",
+  async (user, thunkAPI) => {
+    try {
+      const { data } = await userService.createUser(user);
+      return data;
+    } catch ({ response }) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(response));
+    }
   }
-});
+);
 
-export const login = createAsyncThunk("auth-login", async (user, thunkAPI) => {
-  try {
-    return (await userService.login(user)).data;
-  } catch ({ response }) {
-    return thunkAPI.rejectWithValue(extractErrorMessage(response));
-  }
-});
+export const login = createAsyncThunk(
+  "auth-login", 
+   async (user, thunkAPI) => {
+    try {
+       const { data } = await userService.login(user);
+       return data;
+     } catch ({ response }) {
+       return thunkAPI.rejectWithValue(extractErrorMessage(response));
+     }
+ });
 
-export const logout = createAction("auth/logout", () => {
-  userService.logOut();
-  return {};
+export const logout = createAction(
+  "auth-logout",
+  () => { 
+    userService.logOut();
+     return {};
 });
 
 const authSlice = createSlice({
   name: "auth",
-  initialState,
-
+  initialState: { user: userService.getUser(), isLoading: false },
   extraReducers: (builder) => {
     builder
       .addCase(logout, (state) => {
@@ -41,15 +43,28 @@ const authSlice = createSlice({
       .addCase(login.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(login.fulfilled, (state, action) => {
-        state.user = action.payload;
+      .addCase(login.fulfilled, (state) => {
+        state.user = userService.getUser();
         state.isLoading = false;
       })
       .addCase(login.rejected, (state) => {
         state.isLoading = false;
-      });
+      })
+      .addCase(register.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(register.fulfilled, (state) => {
+        state.isLoading = false;
+      }).addCase(register.rejected, (state) => {
+        state.isLoading = false;
+      })
   },
 });
 
-// export const {logOut} = authSlice.actions;
+function extractErrorMessage(response) {
+  if (response && response.status === 400) {
+    return response.data;
+  }
+}
+
 export default authSlice.reducer;

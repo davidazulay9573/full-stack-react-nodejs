@@ -1,9 +1,13 @@
 import Input from "./Input";
+import useTheme from "../hooks/useTheme";
 
 function Form({ inputs = [], formik, buttonTitle }) {
+  const [theme] = useTheme();
   return (
     <form
-      className="form-group my-1 bg-light shadow-sm p-4"
+      className={`form-group my-1  shadow-sm p-4 bg-${theme} border border-${
+        theme === "dark" ? "light" : "dark"
+      } rounded `}
       noValidate
       onSubmit={formik.handleSubmit}
     >
@@ -21,7 +25,7 @@ function Form({ inputs = [], formik, buttonTitle }) {
 
       <div className="p-3">
         <button
-          className="btn btn-dark"
+          className={`btn btn-${theme === "dark" ? "light" : "dark"}`}
           type="submit"
           disabled={!formik.isValid}
         >

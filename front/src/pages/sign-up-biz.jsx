@@ -1,13 +1,13 @@
 import Form from "../components/Form";
+import PageHeader from "../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../utils/formikValidation";
-
-import {  Navigate } from "react-router-dom";
+import { formikValidation, passwordRegex } from "../utils/formikValidation";
 import useAuth from "../hooks/useAuth";
+import { Navigate , Link} from "react-router-dom";
 
 function SignUpBiz() {
-  const [user,,,signUp] = useAuth();
+  const [user, , , signUp] = useAuth();
 
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
@@ -29,34 +29,37 @@ function SignUpBiz() {
             .min(1)
             .max(250)
             .required()
-            .email({ tlds: { allow: false } }).label('Email'),
+            .email({ tlds: { allow: false } })
+            .label("Email"),
           password: Joi.string()
             .min(6)
             .max(250)
             .required()
-            .regex(
-              /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@%$#^&*\-_])(?=(.*\d){4,})[a-zA-Z!@%$#^&*\-_\d]{8,}$/
-            )
+            .regex(passwordRegex)
             .label("Password"),
-          name: Joi.string().min(2).max(250).required().label('Name'),
+          name: Joi.string().min(2).max(250).required().label("Name"),
         })
       );
     },
-    async onSubmit(values) {
-     
-        await signUp({ ...values, biz: true },'my-cards');
-      
-  
+    onSubmit(values) {
+      signUp({ ...values, biz: true }, "my-cards");
     },
   });
   if (user) return <Navigate to="/" />;
   return (
-    <div className="container-md m-5 w-50">
+    <div className="container-md w-50 text-center">
+      <PageHeader
+        title="Sign Up For Business"
+        description="Please enter your details!"
+      ></PageHeader>
       <Form
         inputs={inputs}
         formik={formik}
         buttonTitle="Sign-Up Business"
       ></Form>
+      <p>
+        You already have an account? <Link to="/sign-in">Sign-in</Link>{" "}
+      </p>
     </div>
   );
 }

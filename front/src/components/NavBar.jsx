@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useTheme from "../hooks/useTheme";
 
 function NavBar() {
   const [user,, , sinout] = useAuth();
   const [theme, changeTheme] = useTheme();
+  
 
   return (
     <nav

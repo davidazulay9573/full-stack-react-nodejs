@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { Navigate , Link} from "react-router-dom";
 
 function SignUpBiz() {
-  const [user,isLoading , , signUp] = useAuth();
+  const [user,isLoading ,,, signUp] = useAuth();
 
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
@@ -42,7 +42,7 @@ function SignUpBiz() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, biz: true }, "my-cards");
+      signUp({ ...values, biz: true }, "/my-cards");
     },
   });
   if (user) return <Navigate to="/" />;

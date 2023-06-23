@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignUp() {
-   const [user, isLoading, , signUp] = useAuth();
+   const [user, isLoading,,, signUp] = useAuth();
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
     { name: "email", lable: "Email", type: "email" },

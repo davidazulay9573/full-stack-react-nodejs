@@ -3,10 +3,10 @@ import PageHeader from "../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import formikValidation from "../utils/formikValidation";
-import useCrudActions from "../hooks/useCard/useCardActions";
+import useCardActions from "../hooks/useCard/useCardActions";
 
 function AddCard() {
-  const [addCard] = useCrudActions();
+  const [addCard] = useCardActions();
 
   const inputs = [
     { name: "bizName", lable: "Name", type: "text" },

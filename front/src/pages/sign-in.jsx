@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignIn() {
-  const [user, signIn] = useAuth();
+  const [user,isLoading ,signIn] = useAuth();
 
   const inputs = [
     { name: "email", lable: "Email", type: "email" },
@@ -49,6 +49,8 @@ function SignIn() {
         title="Sign In"
         description="Please enter your details!"
       ></PageHeader>
+         
+         {isLoading && <h5>Loading...</h5> }
       <Form inputs={inputs} formik={formik} buttonTitle="Sign-In"></Form>
       <p>
         Don't have an account yet? <Link to="/sign-up">Sign-up</Link>

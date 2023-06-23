@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const LS_KEY = 'theme';
 export const themeSlice = createSlice({
   name: "theme",
   initialState: {
-    theme:localStorage.getItem("theme") || 'light',
+    theme:localStorage.getItem(LS_KEY) || 'light',
   },
 
   reducers: {
     changeThemeMode(state) {
        const newThemeMode = state.theme === "light" ? "dark" : "light";
         state.theme = newThemeMode;
-        localStorage.setItem('theme',newThemeMode);
+        localStorage.setItem(LS_KEY,newThemeMode);
     },
   },
 });

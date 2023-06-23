@@ -38,8 +38,7 @@ function App() {
             path="my-cards"
             element={
               <ProtectedRoute is_only_biz>
-                {" "}
-                <MyCards />{" "}
+                <MyCards />
               </ProtectedRoute>
             }
           />

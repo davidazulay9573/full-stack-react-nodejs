@@ -6,7 +6,7 @@ function DeleteCard() {
    const [,,deleteCard] = useCardActions();
    useEffect(() => {
       deleteCard(id);
-   }, [id]);
+   }, [id,deleteCard]);
    return null;
 }
 

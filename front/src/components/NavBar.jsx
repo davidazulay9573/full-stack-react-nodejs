@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 import useTheme from "../hooks/useTheme";
 
 function NavBar() {
-  const [user, , sinout] = useAuth();
+  const [user,, , sinout] = useAuth();
   const [theme, changeTheme] = useTheme();
 
   return (
@@ -17,11 +17,8 @@ function NavBar() {
         </h4>
       </NavLink>
       <button
-        className="btn btn-light M-1 "
-        onClick={() => {
-          changeTheme();
-        }}
-      >
+        className={`btn btn-light m-1`}
+        onClick={changeTheme} >
         {theme === "light" ? (
           <i className="bi bi-moon-stars-fill"></i>
         ) : (
@@ -29,7 +26,9 @@ function NavBar() {
         )}
       </button>
       {user && (
-        <button onClick={sinout} className="btn btn-light m-1">
+        <button
+          onClick={sinout}
+          className={`btn btn-light m-1`}>
           <i className="bi bi-box-arrow-left"></i> Log Out
         </button>
       )}

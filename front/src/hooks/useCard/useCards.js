@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
 import cardService from "../../services/cardService";
+import useAuth from "../useAuth";
 
 function useCards() {
   const [cards, setCards] = useState([]);
-
+  const [user] = useAuth()
   useEffect(() => {
-    const getCards = async () => {
-      try{
+    (async () => {
+      if(user?.biz){
         const { data } = await cardService.getCards();
-        setCards(data);
-      }
-      catch{
-         
-      }
-     
-    };
-    getCards();
-  }, []);
+          setCards(data);
+        }
+    })();
+  }, [user]);
+
   return cards;
 }
 

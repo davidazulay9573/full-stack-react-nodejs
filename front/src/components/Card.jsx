@@ -19,7 +19,7 @@ function Card({card}) {
         <ul className="list pt-2">
           <div className="d-flex lh-sm">
             <p className="fs-6 me-2 text-secondary">
-              <i className="bi bi-buildings-fill"></i>
+              <i className="bi bi-bank2"></i>
             </p>
             <Link to={`/my-cards/${card._id}`} className="fs-6 nav-link">
               {card.bizName}
@@ -27,7 +27,7 @@ function Card({card}) {
           </div>
           <div className="d-flex lh-sm">
             <p className="fs-6 me-2 text-secondary">
-              <i className="bi bi-card-text"></i>
+              <i className="bi bi-blockquote-left"></i>
             </p>
             <p className="fs-6">{card.bizDescription}</p>
           </div>
@@ -43,10 +43,7 @@ function Card({card}) {
             </a>
           </div>
           <div className="d-flex lh-sm">
-            <p className="fs-6 me-2 text-secondary">
-              <i className="bi bi-telephone-inbound-fill"></i>
-            </p>
-
+              <i className="bi bi-telephone-inbound-fill fs-6 me-2 text-secondary"></i>
             <a href={`tel:${card.bizPhone}`} className="fs-6 nav-link">
               {card.bizPhone}
             </a>

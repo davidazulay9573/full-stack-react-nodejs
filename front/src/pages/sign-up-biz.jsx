@@ -7,7 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { Navigate , Link} from "react-router-dom";
 
 function SignUpBiz() {
-  const [user, , , signUp] = useAuth();
+  const [user,isLoading , , signUp] = useAuth();
 
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
@@ -52,13 +52,14 @@ function SignUpBiz() {
         title="Sign Up For Business"
         description="Please enter your details!"
       ></PageHeader>
+      {isLoading && <h5>Loading...</h5>}
       <Form
         inputs={inputs}
         formik={formik}
         buttonTitle="Sign-Up Business"
       ></Form>
       <p>
-        You already have an account? <Link to="/sign-in">Sign-in</Link>{" "}
+        You already have an account? <Link to="/sign-in">Sign-in</Link>
       </p>
     </div>
   );

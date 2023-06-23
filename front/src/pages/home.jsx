@@ -5,7 +5,7 @@ import useAuth from "../hooks/useAuth";
 import { Link } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
 function Home() {
-  const [user,,signOut] = useAuth();
+  const [user,,,signOut] = useAuth();
   const cards = useCards();
   const [theme] = useTheme();
   
@@ -34,11 +34,14 @@ function Home() {
         )}
         {user && !user.biz && (
           <h5 className="p-2">
-            <p>In this acount you can only get in!</p>
             <p>
+              In this acount you can only get in! <br />
               If you want to add cards and to manage your business you need to
             </p>
-            <Link onClick={signOut} to="/sign-up-biz">
+            <Link
+              to="/sign-up-biz"
+              onClick={signOut}
+              className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}>
               Sign-up-business
             </Link>
           </h5>
@@ -46,7 +49,12 @@ function Home() {
         {user?.biz ? (
           cards.length ? (
             <>
-              <Link to="/my-cards"> All your cards</Link>
+              <Link
+                to="/my-cards"
+                className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
+              >
+                All your cards
+              </Link>
               <div className="d-flex flex-wrap justify-content-center">
                 {cards.toReversed().map((card, index) => {
                   if (index < 3) {
@@ -63,7 +71,7 @@ function Home() {
             </>
           )
         ) : (
-          ''
+          ""
         )}
       </div>
     );

@@ -8,22 +8,24 @@ function useAuth() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const signUp = async (user, path) => {
+  const signUp = async (user, path ='/sign-in') => {
     try {
       await dispatch(register(user)).unwrap();
       toast.success("The acount was created successfully 👌");
-      const { email, password } = user;
-      signIn({ email, password });
+      if(user.biz){
+         const { email, password } = user;
+         signIn({ email, password },path);
+      }
       navigate(path);
     } catch (error) {
       toast.error(error);
     }
   };
 
-  const signIn = async (user) => {
+  const signIn = async (user, path ='/') => {
     try {
       await dispatch(login(user)).unwrap();
-      navigate("/");
+      navigate(path);
     } catch (error) {
       toast.error(error);
     }

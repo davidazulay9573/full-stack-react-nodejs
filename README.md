@@ -1,7 +1,17 @@
 # Getting Started with Card-Action project !
-## Server-side 
-Make sure you have installed `Mongo-DB` before starting the server.  
-#### Open the terminal and run :
+## Server-Side 
+
+### Using `node.js` && `express`
+
+to building the server.
+
+
+### Using `mongo-db`
+
+to store the data.
+
+Make sure you have installed `Mongo-DB` before starting the server.
+###  Run in terminal :
 ``` 
 cd backe
 ```
@@ -11,15 +21,15 @@ npm i
 ```
 npm run dev
 ```
-## Front-Side
+## Client-Side
 
-### The front-side based on `React` framwork.
+### The client-side based on `React` framwork.
 
-### Useing 'react-router-dom'
+### Using `react-router-dom`
 
 for building router and navigate between other paths.
 
-### Useing `redux`
+### Using `redux`
 
 for manage the states, and provide globaly states.
 
@@ -31,7 +41,7 @@ To manage API requests in an orderly manner.
 
 for styleing.
 
-#### Open the terminal and run :
+### Run in terminal :
 ``` 
 cd front
 ```
@@ -41,7 +51,7 @@ npm i
 ```
 npm start
 ```
-Now it's all ready to go
+Now it's all ready to go!
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 

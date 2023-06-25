@@ -10,12 +10,12 @@ Signing in with a business user allows you to create new cards. and CRUD them.
 
 ### Using `node.js` && `express`
 
-to building the server.
+To building the server.
 
 
 ### Using `mongo-db`
 
-to store the data.
+To store the data.
 
 Make sure you have installed `Mongo-DB` before starting the server.
 ###  Run in terminal :
@@ -34,11 +34,11 @@ npm run dev
 
 ### Using `react-router-dom`
 
-for building router and navigate between other paths.
+For building router and navigate between other paths.
 
 ### Using `redux`
 
-for manage the states, and provide globaly states.
+For manage the states, and provide globaly states.
 
 ### Using `axois`
 
@@ -46,7 +46,7 @@ To manage API requests in an orderly manner.
 
 ### Using `bootstrap`, `bootstrap-icons`,`react-tostify`
 
-for styleing.
+For styleing.
 
 ### Run in terminal :
 ``` 

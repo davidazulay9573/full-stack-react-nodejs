@@ -35,6 +35,10 @@ npm run dev
 
 For building router and navigate between other paths.
 
+You can follow the file names in the Pages folder to understand the router structure,
+
+Each file represents a path.
+
 ### Using `redux`
 
 For manage the states, and provide globaly states.

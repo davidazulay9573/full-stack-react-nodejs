@@ -1,4 +1,11 @@
-# Getting Started with Card-Action project !
+# Getting Started with `Card-Actions` project !
+ `Card-Actions` 
+ 
+is a system that includes logging in and registering users as a standard or business user,
+
+Includes authentication process using Json Web Token technology.
+
+Signing in with a business user allows you to create new cards. and CRUD them.
 ## Server-Side 
 
 ### Using `node.js` && `express`

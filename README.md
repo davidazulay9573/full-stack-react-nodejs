@@ -1,7 +1,6 @@
-# Getting Started with `Card-Actions` project !
- `Card-Actions` 
+# `Card-Actions` project !
  
-is a system that includes logging in and registering users as a standard or business user,
+Is a system that includes logging in and registering users as a standard or business user,
 
 Includes authentication process using `Json Web Token` technology.
 

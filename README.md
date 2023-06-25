@@ -3,7 +3,7 @@
  
 is a system that includes logging in and registering users as a standard or business user,
 
-Includes authentication process using Json Web Token technology.
+Includes authentication process using `Json Web Token` technology.
 
 Signing in with a business user allows you to create new cards. and CRUD them.
 ## Server-Side 

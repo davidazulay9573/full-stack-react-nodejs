@@ -1,14 +1,20 @@
-# Getting Started with Card-Action project !
+# `Card-Actions` project !
+ 
+Is a system that includes logging in and registering users as a standard or business user,
+
+Includes authentication process using `Json Web Token` technology.
+
+Signing in with a business user allows you to create new cards. and CRUD them.
 ## Server-Side 
 
 ### Using `node.js` && `express`
 
-to building the server.
+To building the server.
 
 
 ### Using `mongo-db`
 
-to store the data.
+To store the data.
 
 Make sure you have installed `Mongo-DB` before starting the server.
 ###  Run in terminal :
@@ -27,11 +33,14 @@ npm run dev
 
 ### Using `react-router-dom`
 
-for building router and navigate between other paths.
+For building router and navigate between other paths.
+
+You can follow the file names in the Pages folder to understand the router structure,
+each file represents a path.
 
 ### Using `redux`
 
-for manage the states, and provide globaly states.
+For manage the states, and provide globaly states.
 
 ### Using `axois`
 
@@ -39,7 +48,7 @@ To manage API requests in an orderly manner.
 
 ### Using `bootstrap`, `bootstrap-icons`,`react-tostify`
 
-for styleing.
+For styleing.
 
 ### Run in terminal :
 ``` 

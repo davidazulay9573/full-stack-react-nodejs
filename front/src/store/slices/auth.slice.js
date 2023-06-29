@@ -9,23 +9,28 @@ export const register = createAsyncThunk(
       return data;
     } catch ({ response }) {
       return thunkAPI.rejectWithValue(extractErrorMessage(response));
-    }
+    } 
   }
 );
 
-export const login = createAsyncThunk("auth-login", async (user, thunkAPI) => {
+export const login = createAsyncThunk(
+  "auth-login",
+ async (user, thunkAPI) => {
   try {
     const { data } = await userService.login(user);
     return data;
   } catch ({ response }) {
     return thunkAPI.rejectWithValue(extractErrorMessage(response));
   }
-});
+ }
+);
 
-export const logout = createAction("auth-logout", () => {
-  userService.logOut();
+export const logout = createAction(
+  "auth-logout",
+  () => {userService.logOut();
   return {};
-});
+  }
+);
 
 const authSlice = createSlice({
   name: "auth",

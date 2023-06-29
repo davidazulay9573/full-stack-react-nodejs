@@ -5,11 +5,11 @@ function useCard(id) {
   const [card, setCard] = useState([]);
 
   useEffect(() => {
-    const getCard = async () => {
+   (async () => {
       const { data } = await cardService.getCard(id);
       setCard(data);
-    };
-    getCard();
+    })();
+
   }, [id]);
 
   return card;

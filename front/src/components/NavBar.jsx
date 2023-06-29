@@ -3,10 +3,9 @@ import useAuth from "../hooks/useAuth";
 import useTheme from "../hooks/useTheme";
 
 function NavBar() {
-  const [user,, , sinout] = useAuth();
+  const [user,,, sinout] = useAuth();
   const [theme, changeTheme] = useTheme();
   
-
   return (
     <nav
       className={`navbar navbar-expand-sm navbar-${theme} bg-${theme} shadow-sm p-3 `}

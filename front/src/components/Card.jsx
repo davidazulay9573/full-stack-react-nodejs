@@ -37,13 +37,14 @@ function Card({card}) {
             </p>
             <a
               href={`https://www.google.com/maps/place/${card.bizAddress}`}
+              target={`_blank`}
               className="fs-6 nav-link"
             >
               {card.bizAddress}
             </a>
           </div>
           <div className="d-flex lh-sm">
-              <i className="bi bi-telephone-inbound-fill fs-6 me-2 text-secondary"></i>
+            <i className="bi bi-telephone-inbound-fill fs-6 me-2 text-secondary"></i>
             <a href={`tel:${card.bizPhone}`} className="fs-6 nav-link">
               {card.bizPhone}
             </a>

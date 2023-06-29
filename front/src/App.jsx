@@ -7,7 +7,7 @@ import MyCards from './pages/my-cards';
 import AddCard from './pages/add-card';
 import EditCard from './pages/edit-card';
 import DeleteCard from './pages/delete-card';
-import Card from './pages/card';
+import Card from './pages/[card]';
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";

@@ -23,18 +23,10 @@ function SignIn() {
     validate(values) {
       return formikValidation(values)(
         Joi.object({
-          email: Joi.string()
-            .min(2)
-            .max(250)
-            .email({ tlds: { allow: false } })
-            .required()
-            .label("Email"),
-          password: Joi.string()
-            .min(6)
-            .max(250)
-            .required()
-            .regex(passwordRegex)
-            .label("Password"),
+          email: Joi.string().min(2).max(250).email({ tlds: { allow: false } }).required().label("Email"),
+          password: Joi.string().min(6).max(250).required().regex(passwordRegex).label("Password").messages({
+              "string.pattern.base": `The "Password" must contain at least 8 Characters, and include 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*-_) and 4 digits(0-9).`,
+            }),
         })
       );
     },
@@ -50,7 +42,7 @@ function SignIn() {
         description="Please enter your details!"
       ></PageHeader>
          
-         {isLoading && <h5>Loading...</h5> }
+       {isLoading && <h5>Loading...</h5> }
       <Form inputs={inputs} formik={formik} buttonTitle="Sign-In"></Form>
       <p>
         Don't have an account yet? <Link to="/sign-up">Sign-up</Link>

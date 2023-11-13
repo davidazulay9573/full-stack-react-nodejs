@@ -28,7 +28,7 @@ function useCardActions() {
         navigate('/my-cards');
 
     } catch  {
-      navigate('/my-cards');
+        navigate('/my-cards');
     }
        
   };

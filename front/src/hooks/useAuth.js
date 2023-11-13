@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function useAuth() {
+ 
   const { user, isLoading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -38,7 +39,5 @@ function useAuth() {
 
   return [user, isLoading, signIn, signOut, signUp];
 }
-
-
 
 export default useAuth;

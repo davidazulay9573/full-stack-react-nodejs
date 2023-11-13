@@ -7,11 +7,14 @@ const http = require("http").Server(app);
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cors = require("cors");
-
 mongoose
-  .connect("mongodb://localhost/card_actions")
+  .connect("mongodb://127.0.0.1:27017/my_rest_api")
   .then(() => console.log("Connected to MongoDB..."))
   .catch((err) => console.error("Could not connect to MongoDB..."));
+// mongoose
+//   .connect("mongodb://localhost/card_actions")
+//   .then(() => console.log("Connected to MongoDB..."))
+//   .catch((err) => console.error("Could not connect to MongoDB..."));
 
 app.use(morgan("dev"));
 app.use(cors());

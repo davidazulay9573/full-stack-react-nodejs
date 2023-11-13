@@ -16,6 +16,11 @@ To building the server.
 
 To store the data.
 
+### Using `Json Web Token`
+
+To authenticate users
+
+
 Make sure you have installed `Mongo-DB` before starting the server.
 ###  Run in terminal :
 ``` 

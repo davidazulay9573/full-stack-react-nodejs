@@ -54,3 +54,7 @@
 03:15 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or passwordundefined
 03:16 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or passwordundefined
 03:16 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:52 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+03:52 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+03:53 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+03:55 - Path: /connection/sign-up, Status Code: 401, Message: User already registered

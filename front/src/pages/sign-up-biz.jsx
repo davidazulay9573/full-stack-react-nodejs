@@ -45,7 +45,7 @@ function SignUpBiz() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, biz: true }, "/my-cards");
+      signUp({ ...values, isBusiness: true }, "/my-cards");
     },
   });
   if (user) return <Navigate to="/" />;

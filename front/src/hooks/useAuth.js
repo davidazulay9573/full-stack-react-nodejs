@@ -26,7 +26,8 @@ function useAuth() {
     try {
     const data = await dispatch(register(user)).unwrap();
       toast.success("The acount was created successfully 👌");
-      if (user.biz) {
+      console.log(user.isBusiness);
+      if (user.isBusiness) {
         const { email, password } = user;
         signIn({ email, password }, path);
       }

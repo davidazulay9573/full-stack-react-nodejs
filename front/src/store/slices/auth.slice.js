@@ -8,8 +8,6 @@ export const register = createAsyncThunk(
       const { data } = await userService.createUser(user);
       return data;
     } catch ({ response} ) {
-     console.log(response.data);
-     console.log(thunkAPI.rejectWithValue(extractErrorMessage(response.data)));
       return thunkAPI.rejectWithValue(extractErrorMessage(response));
     } 
   }

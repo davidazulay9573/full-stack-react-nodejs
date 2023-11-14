@@ -58,7 +58,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
+          <Route 
             path="my-cards/:id"
             element={
               <ProtectedRoute is_only_biz>

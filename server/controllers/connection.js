@@ -14,7 +14,7 @@ async function signUp(req, res) {
       user.password = await bcrypt.hash(user.password, 12);
       await user.save();
 
-      res.send(_.pick(user, ["_id", "name", "email", "biz"]));
+      res.send(_.pick(user, ["_id", "name", "email", "isBusiness"]));
       
     } catch (error) {
       sendError(res, 500, `dbError: ${error.message} `);

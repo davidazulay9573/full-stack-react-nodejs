@@ -1,6 +1,6 @@
 import { useState } from "react";
-import useAuth from "../lib/hooks/useAuth";
-import useTheme from "../lib/hooks/useTheme";
+import useAuth from "../lib/hooks/global-states/useAuth";
+import useTheme from "../lib/hooks/global-states/useTheme";
 import dateFormat from "../lib/utils/date-format";
 import postService from "../lib/api-request/posts";
 
@@ -8,6 +8,7 @@ function PostCard({ post }) {
   const [theme] = useTheme();
   const [user] = useAuth();
   const [likes, setLikes] = useState(post?.likes || []);
+  const [activeTab, setActiveTab] = useState(null);
   const [comments, setComments] = useState(0);
 
   const isLiked = () => {
@@ -18,10 +19,6 @@ function PostCard({ post }) {
     const response = await postService.LikeAndDisLike(post._id);
     const likesRes = await response.data;
     setLikes(likesRes || []);
-  };
-
-  const handleComment = () => {
-    setComments(comments + 1);
   };
 
   return (
@@ -54,7 +51,7 @@ function PostCard({ post }) {
           </button>
           <button
             className="btn btn-outline-secondary btn-sm"
-            onClick={handleComment}
+            onClick={() => setActiveTab("comments")}
           >
             <i className="bi bi-chat-right-text"></i> {comments}
           </button>

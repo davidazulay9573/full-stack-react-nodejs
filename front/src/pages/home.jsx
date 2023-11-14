@@ -1,8 +1,8 @@
 import PageHeader from "../components/PageHeader";
 import PostCard from "../components/PostCard";
 import usePosts from "../lib/hooks/posts/usePosts";
-import useAuth from "../lib/hooks/useAuth";
-import useTheme from "../lib/hooks/useTheme";
+import useAuth from "../lib/hooks/global-states/useAuth";
+import useTheme from "../lib/hooks/global-states/useTheme";
 import { Link } from "react-router-dom";
 function Home() {
   const [user, , , signOut] = useAuth();
@@ -32,14 +32,14 @@ function Home() {
           </Link>
         </h5>
       )}
-      {user && !user?.isBusiness && (
+      {user && !user?.isContentEditor && (
         <h5 className="p-2">
           <p>
             In this acount you can only get in! <br />
             If you want to add posts you need to
           </p>
           <Link
-            to="/sign-up-biz"
+            to="/sign-up-editor"
             onClick={signOut}
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
@@ -47,7 +47,7 @@ function Home() {
           </Link>
         </h5>
       )}
-      {user?.isBusiness ? (
+      {user?.isContentEditor ? (
         posts.length ? (
           <>
             <Link

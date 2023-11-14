@@ -1,7 +1,7 @@
 const { User } = require("./model");
 const sendError = require("../utils/sendError");
 
-async function getUser(req, res) {
+async function getLoggeronUser(req, res) {
   try {
     const user = await User.findById(req.params.id).select(
       "-password -__v -loginAttempts -blockTime -isAdmin"
@@ -20,7 +20,7 @@ async function getUser(req, res) {
   }
 }
 
-async function getUsers(req, res) {
+async function getLoggeronUsers(req, res) {
   try {
     const users = await User.find().select(
       "-password -__v -loginAttempts -blockTime -isAdmin"
@@ -81,22 +81,39 @@ async function deleteUser(req, res) {
   }
 }
 
-async function switchBizStatus(req, res) {
+async function followAndDisFollow(req, res) {
   try {
-    const user = await User.findOne({ _id: req.params.id });
-    if (!user) {
-      sendError(res, 404, "The user with the given ID was not found");
+    const isFollow = await User.findOne({
+      _id: req.params.id,
+      followers: req.user._id,
+    });
+
+    if (isFollow) {
+      const updatedUser = await User.findOneAndUpdate(
+        { _id: req.params.id },
+        { $pull: { likes: { user_id: req.user._id } } },
+        { new: true }
+      ).select("-__v ");
+      if (!updatedUser) {
+        sendError(res, 404, "The post with the given ID was not found");
+        return;
+      }
+      res.send(updatedUser.followers);
       return;
     }
-    await user.updateOne({ isBusiness: !user.isBusiness });
-    res.send(
-      `The business status switched from ${
-        user.isBusiness
-      } to ${!user.isBusiness} `
-    );
+    const user = await User.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { followers: { user_id: req.user._id } } },
+      { new: true }
+    ).select("-__v ");
+    if (!user) {
+      sendError(res, 404, "The post with the given ID was not found");
+      return;
+    }
+    res.send(user.followers);
   } catch (error) {
     if (error.path === "_id") {
-      sendError(res, 404, "The user with the given ID was not found");
+      sendError(res, 404, "The post with the given ID was not found");
       return;
     }
     sendError(res, 500, `dbError: ${error.message} `);
@@ -104,10 +121,10 @@ async function switchBizStatus(req, res) {
 }
 
 module.exports = {
-  getUser,
-  getUsers,
+  getLoggeronUser,
+  getLoggeronUsers,
   getLoggedOnUser,
   updatedUser,
   deleteUser,
-  switchBizStatus,
+  followAndDisFollow,
 };

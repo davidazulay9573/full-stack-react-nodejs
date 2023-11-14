@@ -10,11 +10,16 @@ async function signUp(req, res) {
       return;
     }
 
-    const user = new User(req.body);
+    const user = new User({
+      ...req.body,
+      image:
+        req.body.image ||
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+    });
     user.password = await bcrypt.hash(user.password, 12);
     await user.save();
 
-    res.send(_.pick(user, ["_id", "name", "email", "isBusiness"]));
+    res.send(_.pick(user, ["_id", "name", "email", "isContentEditor"]));
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);
   }

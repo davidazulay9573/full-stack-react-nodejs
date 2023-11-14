@@ -2,17 +2,17 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import SignIn from "./pages/auth/sign-in";
 import SignUp from "./pages/auth/sign-up";
-import SignUpBiz from "./pages/auth/sign-up-biz";
-import Myposts from "./pages/posts";
-import AddPost from "./pages/posts/add";
+import SignUpEditor from "./pages/auth/sign-up-editor";
+import Posts from "./pages/posts";
 import EditCard from "./pages/posts/edit";
 import DeleteCard from "./pages/posts/delete";
 import PostCard from "./pages/posts/[post]";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
-import useTheme from "./lib/hooks/useTheme";
+import useTheme from "./lib/hooks/global-states/useTheme";
 import { Routes, Route } from "react-router-dom";
+import Users from "./pages/users";
 
 function App() {
   const [theme] = useTheme();
@@ -25,29 +25,27 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
-          <Route path="sign-up-biz" element={<SignUpBiz />} />
+          <Route path="sign-up-editor" element={<SignUpEditor />} />
           <Route
-            path="posts/add"
+            path="posts"
             element={
-            
-              <ProtectedRoute is_only_biz>
-                HELLO
-                <AddPost />
+              <ProtectedRoute is_only_editor>
+                <Posts />
               </ProtectedRoute>
             }
           />
           <Route
-            path="posts"
+            path="users"
             element={
-              <ProtectedRoute is_only_biz>
-                <Myposts />
+              <ProtectedRoute is_only_editor>
+                <Users />
               </ProtectedRoute>
             }
           />
           <Route
             path="/edit/:id"
             element={
-              <ProtectedRoute is_only_biz>
+              <ProtectedRoute is_only_editor>
                 <EditCard />
               </ProtectedRoute>
             }
@@ -55,7 +53,7 @@ function App() {
           <Route
             path="posts/delete/:id"
             element={
-              <ProtectedRoute is_only_biz>
+              <ProtectedRoute is_only_editor>
                 <DeleteCard />
               </ProtectedRoute>
             }
@@ -63,7 +61,7 @@ function App() {
           <Route
             path="posts/:id"
             element={
-              <ProtectedRoute is_only_biz>
+              <ProtectedRoute is_only_editor>
                 <PostCard />
               </ProtectedRoute>
             }

@@ -4,19 +4,19 @@ const authentication = require("../middleware/authentication");
 const authorization = require("../middleware/authorization");
 const validation = require("../middleware/validation");
 const {
-  getUser,
-  getUsers,
+  getLoggeronUser,
+  getLoggeronUsers,
   updatedUser,
   deleteUser,
-  switchBizStatus,
+  followAndDisFollow,
   getLoggedOnUser,
 } = require("./controller");
 
 router.get(
   "/",
   authentication(),
-  authorization("isBusiness", "isAdmin"),
-  getUsers
+  authorization("isContentEditor", "isAdmin"),
+  getLoggeronUsers
 );
 
 router.get("/me", authentication(), getLoggedOnUser);
@@ -24,8 +24,8 @@ router.get("/me", authentication(), getLoggedOnUser);
 router.get(
   "/:id",
   authentication(),
-  authorization("isBusiness", "isAdmin", "acountOwner"),
-  getUser
+  authorization("isContentEditor", "isAdmin", "acountOwner"),
+  getLoggeronUser
 );
 
 router.put(
@@ -43,11 +43,6 @@ router.delete(
   deleteUser
 );
 
-router.patch(
-  "/:id",
-  authentication(),
-  authorization("isAdmin", "acountOwner"),
-  switchBizStatus
-);
+router.patch("/:id", authentication(), followAndDisFollow);
 
 module.exports = router;

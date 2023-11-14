@@ -14,11 +14,11 @@ const {
 } = require("./controller");
 
 router.get("/", getPosts);
-router.get("/liked", getLikedPosts)
+router.get("/liked", getLikedPosts);
 router.post(
   "/",
   authentication(),
-  authorization("isBusiness", "isAdmin"),
+  authorization("isContentEditor", "isAdmin"),
   validation(postSchema),
   createPost
 );

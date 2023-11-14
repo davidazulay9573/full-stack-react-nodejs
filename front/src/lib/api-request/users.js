@@ -1,19 +1,19 @@
-import httpService from "./http-request";
+import httpRequest from "./http-request";
 import jwtDecode from "jwt-decode";
 
 const TOKEN_LS_KEY = "token";
 
 function setCommonHeader() {
-  httpService.setCommonHeader("x-auth-token", getJWT());
+  httpRequest.setCommonHeader("x-auth-token", getJWT());
 }
 setCommonHeader();
 
 export function createUser(user) {
-  return httpService.post("/auth/sign-up", user);
+  return httpRequest.post("/auth/sign-up", user);
 }
 
 export async function login(user) {
-  const response = await httpService.post("/auth/sign-in", user);
+  const response = await httpRequest.post("/auth/sign-in", user);
   const token = await response.data.token;
   localStorage.setItem(TOKEN_LS_KEY, token);
   setCommonHeader();
@@ -28,19 +28,27 @@ function getJWT() {
   return localStorage.getItem(TOKEN_LS_KEY);
 }
 
-function getUser() {
+function getLoggeronUser() {
   try {
     return jwtDecode(getJWT());
   } catch {
     return null;
   }
 }
+function getUser(id){
+ return httpRequest.get(`/users/${id}`)
+}
+function getUsers() {
+ return httpRequest.get('/users')
+}
 
 const userService = {
   createUser,
   login,
   logOut,
+  getLoggeronUser,
   getUser,
+  getUsers
 };
 
 export default userService;

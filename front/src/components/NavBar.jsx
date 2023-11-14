@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import useAuth from "../lib/hooks/useAuth";
-import useTheme from "../lib/hooks/useTheme";
+import useAuth from "../lib/hooks/global-states/useAuth";
+import useTheme from "../lib/hooks/global-states/useTheme";
 
 function NavBar() {
   const [user, , , sinout] = useAuth();
@@ -31,7 +31,7 @@ function NavBar() {
 
       <div className="collapse navbar-collapse" id="navbarsExample04">
         <ul className="navbar-nav ms-auto mb-2 mb-md-0">
-          {user?.isBusiness && (
+          {user?.isContentEditor && (
             <>
               <li className="nav-item">
                 <NavLink to="/posts" className="nav-link">
@@ -61,8 +61,8 @@ function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/sign-up-biz" className="nav-link">
-                  Sign Up Business
+                <NavLink to="/sign-up-editor" className="nav-link">
+                  Sign Up Editor
                 </NavLink>
               </li>
             </>

@@ -2,11 +2,14 @@ import Form from "../../components/Form";
 import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import { formikValidation, passwordRegex } from "../../lib/utils/formikValidation";
-import useAuth from "../../lib/hooks/useAuth";
+import {
+  formikValidation,
+  passwordRegex,
+} from "../../lib/utils/formikValidation";
+import useAuth from "../../lib/hooks/global-states/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
-function SignUpBiz() {
+function SignUpEditor() {
   const [user, isLoading, , , signUp] = useAuth();
 
   const inputs = [
@@ -47,22 +50,18 @@ function SignUpBiz() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, isBusiness: true }, "/my-posts");
+      signUp({ ...values, isContentEditor: true }, "/my-posts");
     },
   });
   if (user) return <Navigate to="/" />;
   return (
     <div className="container-md w-50 text-center">
       <PageHeader
-        title="Sign Up For Business"
+        title="Sign Up For Content Editor"
         description="Please enter your details!"
       ></PageHeader>
       {isLoading && <h5>Loading...</h5>}
-      <Form
-        inputs={inputs}
-        formik={formik}
-        buttonTitle="Sign-Up Business"
-      ></Form>
+      <Form inputs={inputs} formik={formik} buttonTitle="Sign-Up"></Form>
       <p>
         You already have an account? <Link to="/sign-in">Sign-in</Link>
       </p>
@@ -70,4 +69,4 @@ function SignUpBiz() {
   );
 }
 
-export default SignUpBiz;
+export default SignUpEditor;

@@ -23,19 +23,25 @@ const usersSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 1024,
   },
-  isBusiness: {
+  isContentEditor: {
     type: Boolean,
     required: true,
   },
   createdAt: { type: Date, default: Date.now },
   posts: Array,
+  followers: [
+    {
+      user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      createdAt: { type: Date, default: Date.now },
+    },
+  ],
 });
 
 usersSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     {
       _id: this._id,
-      isBusiness: this.isBusiness,
+      isContentEditor: this.isContentEditor,
       isAdmin: this.isAdmin,
       blockTime: this.blockTime,
     },
@@ -64,7 +70,7 @@ const registerSchema = Joi.object({
       "string.pattern.base": `The "Password" must contain at least 8 Characters, and include 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*-_) and 4 digits(0-9).`,
     }),
   name: Joi.string().min(2).max(250).required().label("Name"),
-  isBusiness: Joi.boolean().required(),
+  isContentEditor: Joi.boolean().required(),
 });
 
 const loginSchema = Joi.object({

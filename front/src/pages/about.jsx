@@ -1,5 +1,5 @@
 import PageHeader from "../components/PageHeader";
-import useAuth from "../lib/hooks/useAuth";
+import useAuth from "../lib/hooks/global-states/useAuth";
 import { Link } from "react-router-dom";
 
 function About() {
@@ -13,7 +13,7 @@ function About() {
           If you want only to get in you can register with <br />
           <Link to="/sign-up">Sign-Up</Link> <br /> <br />
           But my recommend for you{" "}
-          <Link to="/sign-up-biz"> Sign-Up-Businnes</Link> <br />
+          <Link to="/sign-up-editor"> Sign-Up-Businnes</Link> <br />
           it allows you to create and update posts for your businnes!
         </p>
       )}
@@ -22,7 +22,7 @@ function About() {
           In this acount you can only get in! <br />
           If you want to add posts and to manage your business you need to{" "}
           <br />
-          <Link to="/sign-up-biz" onClick={signOut}>
+          <Link to="/sign-up-editor" onClick={signOut}>
             {" "}
             Sign-up-business{" "}
           </Link>

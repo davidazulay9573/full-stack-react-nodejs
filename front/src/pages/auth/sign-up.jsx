@@ -2,8 +2,11 @@ import Form from "../../components/Form";
 import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import { formikValidation, passwordRegex } from "../../lib/utils/formikValidation";
-import useAuth from "../../lib/hooks/useAuth";
+import {
+  formikValidation,
+  passwordRegex,
+} from "../../lib/utils/formikValidation";
+import useAuth from "../../lib/hooks/global-states/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignUp() {
@@ -45,7 +48,7 @@ function SignUp() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, isBusiness: false }, "/sign-in");
+      signUp({ ...values, isContentEditor: false }, "/sign-in");
     },
   });
 
@@ -60,7 +63,7 @@ function SignUp() {
         {isLoading && <h5>Loading...</h5>}
         <Form inputs={inputs} formik={formik} buttonTitle="Sign-Up"></Form>
         <p>
-          You already have an account? <Link to="/sign-in">Sign-in</Link>{" "}
+          You already have an account? <Link to="/sign-in">Sign-in</Link>
         </p>
       </div>
     </div>

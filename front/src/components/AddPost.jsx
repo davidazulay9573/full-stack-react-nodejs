@@ -1,9 +1,9 @@
-import Form from "../../components/Form";
-import PageHeader from "../../components/PageHeader";
+import Form from "./Form";
+import PageHeader from "./PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../../lib/utils/formikValidation";
-import usePostActions from "../../lib/hooks/posts/usePostActions";
+import formikValidation from "../lib/utils/formikValidation";
+import usePostActions from "../lib/hooks/posts/usePostActions";
 
 export default function AddPost() {
   const [addPost] = usePostActions();
@@ -38,12 +38,8 @@ export default function AddPost() {
 
   return (
     <div className="container-md w-50 text-center">
-      <PageHeader
-        title="Add A New Card"
-        description="To create a new card, please fill in the following details! "
-      ></PageHeader>
+      <p className=" m-4">Add A New Post</p>
       <Form inputs={inputs} formik={formik} buttonTitle="add"></Form>
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import { register, login, logout } from "../../store/slices/auth.slice";
+import { register, login, logout } from "../../../store/slices/auth.slice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -25,8 +25,8 @@ function useAuth() {
     try {
       const data = await dispatch(register(user)).unwrap();
       toast.success("The acount was created successfully 👌");
-      console.log(user.isBusiness);
-      if (user.isBusiness) {
+      console.log(user.isContentEditor);
+      if (user.isContentEditor) {
         const { email, password } = user;
         signIn({ email, password }, path);
       }

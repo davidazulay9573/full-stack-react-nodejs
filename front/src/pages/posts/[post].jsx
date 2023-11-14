@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import usePost from "../../lib/hooks/posts/usePost";
-import useTheme from "../../lib/hooks/useTheme";
+import useTheme from "../../lib/hooks/global-states/useTheme";
 function Post() {
   const { id } = useParams();
   const post = usePost(id);

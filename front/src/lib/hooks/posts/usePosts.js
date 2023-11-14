@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import postService from "../../api-request/posts";
-import useAuth from "../useAuth";
+import useAuth from "../global-states/useAuth";
 
 function usePosts() {
   const [posts, setPosts] = useState([]);
   const [user] = useAuth();
   useEffect(() => {
     (async () => {
-      if (user?.isBusiness) {
+      if (user?.isContentEditor) {
         const { data } = await postService.getPosts();
         setPosts(data);
       }

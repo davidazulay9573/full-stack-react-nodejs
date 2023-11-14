@@ -2,8 +2,11 @@ import Form from "../../components/Form";
 import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import { formikValidation, passwordRegex } from "../../lib/utils/formikValidation";
-import useAuth from "../../lib/hooks/useAuth";
+import {
+  formikValidation,
+  passwordRegex,
+} from "../../lib/utils/formikValidation";
+import useAuth from "../../lib/hooks/global-states/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignIn() {

@@ -1,10 +1,10 @@
-import useAuth from "../lib/hooks/useAuth";
+import useAuth from "../lib/hooks/global-states/useAuth";
 import { Navigate } from "react-router-dom";
-function ProtectedRoute({ children, is_only_biz }) {
+function ProtectedRoute({ children, is_only_editor }) {
   const [user] = useAuth();
 
-  if (!user || (is_only_biz && !user?.isBusiness)) {
-    console.log(user?.isBusiness);
+  if (!user || (is_only_editor && !user?.isContentEditor)) {
+    console.log(user?.isContentEditor);
     return <Navigate to="/sign-in" />;
   }
   return children;

@@ -99,7 +99,7 @@ npm run seed-db
     "phone":"0505555555",
     "email":"john@doe.net",
     "password":"123456",
-    "isBusiness":true,
+    "isContentEditor":true,
     "address":{
         "state":"New York",
         "country":"USA",

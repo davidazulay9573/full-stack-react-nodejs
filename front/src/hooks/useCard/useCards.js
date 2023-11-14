@@ -7,7 +7,7 @@ function useCards() {
   const [user] = useAuth()
   useEffect(() => {
     (async () => {
-      if(user?.biz){
+      if(user?.isBusiness ){
         const { data } = await cardService.getCards();
           setCards(data);
         }

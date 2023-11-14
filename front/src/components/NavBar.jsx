@@ -35,7 +35,7 @@ function NavBar() {
 
       <div className="collapse navbar-collapse" id="navbarsExample04">
         <ul className="navbar-nav ms-auto mb-2 mb-md-0">
-          {user?.biz && (
+          {user?.isBusiness && (
             <>
               <li className="nav-item">
                 <NavLink to="/my-cards" className="nav-link">

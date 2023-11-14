@@ -32,7 +32,7 @@ function Home() {
             </Link>
           </h5>
         )}
-        {user && !user.biz && (
+        {user && !user?.isBusiness  && (
           <h5 className="p-2">
             <p>
               In this acount you can only get in! <br />

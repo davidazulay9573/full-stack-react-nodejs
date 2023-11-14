@@ -58,3 +58,30 @@
 03:52 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
 03:53 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
 03:55 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+04:29 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:29 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:29 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:29 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/651248a5a8b1a99355c8035a, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:30 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:32 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:32 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:32 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:32 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
+04:33 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 404, Message: The card with the given ID was not found

@@ -3,103 +3,35 @@ const Joi = require("joi");
 const _ = require("lodash");
 
 const cardsSchema = new mongoose.Schema({
-  title: {
+    bizName: {
     type: String,
     required: true,
     minlength: 2,
     maxlength: 255,
   },
-  subtitle: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 255,
-  },
-  description: {
+  bizDescription: {
     type: String,
     required: true,
     minlength: 2,
     maxlength: 1024,
   },
-  phone: {
+  bizAddress: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 400,
+  },
+  bizPhone: {
     type: String,
     required: true,
     minlength: 9,
     maxlength: 10,
   },
-  email: {
-    type: String,
-    required: true,
-    minlength: 6,
-    maxlength: 255,
-  },
-  web: {
+  bizImage: {
     type: String,
     required: true,
     minlength: 11,
     maxlength: 1024,
-  },
-  image: {
-    url: {
-      type: String,
-      default:
-        "https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg",
-      minlength: 11,
-      maxlength: 1024,
-    },
-    alt: {
-      type: String,
-      minlength: 6,
-      maxlength: 255,
-      default: "Business Image",
-    },
-    _id: {
-      type: mongoose.Types.ObjectId,
-      default: new mongoose.Types.ObjectId(),
-    },
-  },
-  address: {
-    state: {
-      type: String,
-      minlength: 0,
-      maxlength: 255,
-      default: "",
-    },
-    country: {
-      type: String,
-      minlength: 3,
-      maxlength: 255,
-      required: true,
-    },
-    city: {
-      type: String,
-      minlength: 6,
-      maxlength: 255,
-      required: true,
-    },
-    street: {
-      type: String,
-      minlength: 3,
-      maxlength: 255,
-      required: true,
-    },
-    houseNumber: {
-      type: String,
-      minlength: 1,
-      maxlength: 10,
-      required: true,
-    },
-    zip: {
-      type: String,
-      minlength: 0,
-      maxlength: 12,
-      default: "",
-    },
-
-    _id: {
-      type: mongoose.Types.ObjectId,
-      default: new mongoose.Types.ObjectId(),
-    },
   },
   bizNumber: {
     type: String,
@@ -133,28 +65,15 @@ const generateBizNumber = async () => {
 };
 
 const cardSchema = Joi.object({
-  title: Joi.string().min(2).max(255).required(),
-  subtitle: Joi.string().min(2).max(255).required(),
-  description: Joi.string().min(2).max(1024).required(),
-  phone: Joi.string()
+  bizName: Joi.string().min(2).max(255).required(),
+  bizDescription: Joi.string().min(2).max(1024).required(),
+  bizAddress: Joi.string().min(2).max(400).required(),
+  bizPhone: Joi.string()
     .min(9)
     .max(10)
     .required()
     .regex(/^0[2-9]\d{7,8}$/),
-  email: Joi.string().min(6).max(255).required().email({ tlds: false }),
-  web: Joi.string().min(11).max(1024).required(),
-  image: Joi.object({
-    url: Joi.string().min(11).max(1024),
-    alt: Joi.string().min(6).max(255),
-  }),
-  address: Joi.object({
-    state: Joi.string().allow(""),
-    country: Joi.string().min(3).max(255).required(),
-    city: Joi.string().min(6).max(255).required(),
-    street: Joi.string().min(3).max(255).required(),
-    houseNumber: Joi.string().min(1).max(10).required(),
-    zip: Joi.string().min(0).max(12),
-  }).required(),
+  bizImage: Joi.string().min(11).max(1024),
 });
 
 const bizNumberSchema = Joi.object({

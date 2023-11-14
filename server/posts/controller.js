@@ -23,8 +23,23 @@ async function getPosts(req, res) {
   try {
     const { user } = req.query;
     const posts = user
-      ? await Post.find({ user_id: user }).select("-__v -bizNumber")
-      : await Post.find().select("-__v -bizNumber");
+      ? await Post.find({ user_id: user }).select("-__v")
+      : await Post.find().select("-__v");
+    if (!posts.length) {
+      res.send([]);
+      return;
+    }
+    res.send(posts);
+  } catch (error) {
+    sendError(res, 500, `dbError: ${error.message} `);
+  }
+}
+
+async function getLikedPosts(req, res){
+  try {
+    const posts = await Post.find({
+      likes: { $elemMatch: { user_id: req.user._id } },
+    }).select("-__v");
     if (!posts.length) {
       res.send([]);
       return;
@@ -122,7 +137,7 @@ async function LikeAndDisLike(req, res) {
       sendError(res, 404, "The post with the given ID was not found");
       return;
     }
-    res.send(Post.likes);
+    res.send(post.likes);
   } catch (error) {
     if (error.path === "_id") {
       sendError(res, 404, "The post with the given ID was not found");
@@ -135,6 +150,7 @@ async function LikeAndDisLike(req, res) {
 module.exports = {
   getPost,
   getPosts,
+  getLikedPosts,
   updatedPost,
   deletePost,
   LikeAndDisLike,

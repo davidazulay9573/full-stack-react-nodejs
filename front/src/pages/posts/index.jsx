@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function Posts() {
   const posts = usePosts();
-  console.log(posts);
   return (
     <div className="text-center ">
       <PageHeader title="Here you can see all posts created!"></PageHeader>

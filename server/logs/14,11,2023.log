@@ -35,3 +35,8 @@
 07:31 - Path: /posts, Status Code: 500, Message: dbError: generateBizNumber is not defined 
 07:32 - Path: /posts, Status Code: 500, Message: dbError: generateBizNumber is not defined 
 07:33 - Path: /posts, Status Code: 500, Message: dbError: Post.save is not a function 
+19:07 - Path: /, Status Code: 404, Message: Page not found.
+19:26 - Path: /post/655309af764ba1c889d2485c, Status Code: 404, Message: Page not found.
+19:26 - Path: /post/6553a484098b267fbdfe2a72, Status Code: 404, Message: Page not found.
+19:31 - Path: /posts/65530732764ba1c889d2484d, Status Code: 401, Message: Unauthorized
+19:31 - Path: /favicon.ico, Status Code: 404, Message: Page not found.

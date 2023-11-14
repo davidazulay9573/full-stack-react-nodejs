@@ -6,6 +6,7 @@ const validation = require("../middleware/validation");
 const {
   getPost,
   getPosts,
+  getLikedPosts,
   updatedPost,
   deletePost,
   LikeAndDisLike,
@@ -13,7 +14,7 @@ const {
 } = require("./controller");
 
 router.get("/", getPosts);
-
+router.get("/liked", getLikedPosts)
 router.post(
   "/",
   authentication(),

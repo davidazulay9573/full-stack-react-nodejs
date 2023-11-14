@@ -1,14 +1,23 @@
 import { useState } from "react";
+import useAuth from "../lib/hooks/useAuth";
 import useTheme from "../lib/hooks/useTheme";
 import dateFormat from "../lib/utils/date-format";
+import postService from "../lib/api-request/posts";
 
 function PostCard({ post }) {
   const [theme] = useTheme();
-  const [likes, setLikes] = useState(0); 
-  const [comments, setComments] = useState(0); 
+  const [user] = useAuth();
+  const [likes, setLikes] = useState(post?.likes || []);
+  const [comments, setComments] = useState(0);
 
-  const handleLike = () => {
-    setLikes(likes + 1);
+  const isLiked = () => {
+    return likes.find((like) => like.user_id === user._id);
+  };
+
+  const handleLike = async () => {
+    const response = await postService.LikeAndDisLike(post._id);
+    const likesRes = await response.data;
+    setLikes(likesRes || []);
   };
 
   const handleComment = () => {
@@ -36,11 +45,12 @@ function PostCard({ post }) {
           Posted by {post?.author} on {dateFormat(post?.createdAt)}
         </div>
         <div className="d-flex justify-content-between align-items-center">
-          <button
-            className="btn btn-outline-secondary btn-sm"
-            onClick={handleLike}
-          >
-            <i className="bi bi-hand-thumbs-up"></i> {likes}
+          <button className="btn btn-outline-secondary btn-sm">
+            <i
+              onClick={handleLike}
+              className={`bi bi-hand-thumbs-up${isLiked() ? "-fill" : ""}`}
+            ></i>
+            {likes.length}
           </button>
           <button
             className="btn btn-outline-secondary btn-sm"

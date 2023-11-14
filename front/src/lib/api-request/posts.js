@@ -16,8 +16,8 @@ function getPost(id) {
   return httpRequest.get(`/posts/${id}`);
 }
 
-function getPosts(user_id) {
-  const path = user_id ? `/posts"?user${user_id}` : "/posts";
+function getPosts(userId) {
+  const path = userId ? `/posts/?user=${userId}` : "/posts";
   return httpRequest.get(path);
 }
 

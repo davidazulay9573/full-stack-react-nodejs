@@ -1,5 +1,4 @@
 import Form from "./Form";
-import PageHeader from "./PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import formikValidation from "../lib/utils/formikValidation";
@@ -37,7 +36,7 @@ export default function AddPost() {
   });
 
   return (
-    <div className="container-md w-50 text-center">
+    <div className="container text-center">
       <p className=" m-4">Add A New Post</p>
       <Form inputs={inputs} formik={formik} buttonTitle="add"></Form>
     </div>

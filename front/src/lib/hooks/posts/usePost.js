@@ -5,7 +5,7 @@ function usePost(id) {
 
   useEffect(() => {
     (async () => {
-      const { data } = await postService.getCard(id);
+      const { data } = await postService.getPost(id);
       setPost(data);
     })();
   }, [id]);

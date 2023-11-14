@@ -2,7 +2,7 @@ import Form from "../../components/Form";
 import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../../utils/formikValidation";
+import formikValidation from "../../lib/utils/formikValidation";
 import usePostActions from "../../lib/hooks/posts/usePostActions";
 
 export default function AddPost() {

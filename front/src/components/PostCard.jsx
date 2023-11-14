@@ -1,46 +1,56 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import useTheme from "../lib/hooks/useTheme";
+import dateFormat from "../lib/utils/date-format";
 
- const PostCard = ({ title, description, image }) => {
+function PostCard({ post }) {
+  const [theme] = useTheme();
+  const [likes, setLikes] = useState(0); 
+  const [comments, setComments] = useState(0); 
+
+  const handleLike = () => {
+    setLikes(likes + 1);
+  };
+
+  const handleComment = () => {
+    setComments(comments + 1);
+  };
+
   return (
-  
-<div className="row">
-    <div className="col-md-8">
-        <div className="media g-mb-30 media-comment">
-           
-            <div className="media-body u-shadow-v18 g-bg-secondary g-pa-30"/>
-              <div className="g-mb-15">
-                <h5 className="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
-                <span className="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
-              </div>
-        
-              <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-        
-              <ul className="list-inline d-sm-flex my-0">
-                <li className="list-inline-item g-mr-20">
-                  <a className="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                    <i className="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
-                    178
-                  </a>
-                </li>
-                <li className="list-inline-item g-mr-20">
-                  <a className="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                    <i className="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
-                    34
-                  </a>
-                </li>
-                <li className="list-inline-item ml-auto">
-                  <a className="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                    <i className="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                    Reply
-                  </a>
-                </li>
-              </ul>
-            </div>
+    <div
+      className={`card ms-2 me-2 mt-3 mb-3 shadow p-3 bg-body-tertiary rounded ${theme}`}
+    >
+      {post?.image && (
+        <img
+          src={post?.image}
+          className="card-img-top img-fluid"
+          alt="Post"
+          style={{ maxHeight: "150px", objectFit: "cover" }}
+        />
+      )}
+      <div className="card-body">
+        <h5 className="card-title">{post?.title}</h5>
+        <p className="card-text">{post?.description}</p>
+      </div>
+      <div className="card-footer text-muted">
+        <div className="mb-2">
+          Posted by {post?.author} on {dateFormat(post?.createdAt)}
         </div>
+        <div className="d-flex justify-content-between align-items-center">
+          <button
+            className="btn btn-outline-secondary btn-sm"
+            onClick={handleLike}
+          >
+            <i className="bi bi-hand-thumbs-up"></i> {likes}
+          </button>
+          <button
+            className="btn btn-outline-secondary btn-sm"
+            onClick={handleComment}
+          >
+            <i className="bi bi-chat-right-text"></i> {comments}
+          </button>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default PostCard
+}
+export default PostCard;

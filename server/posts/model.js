@@ -47,6 +47,7 @@ const PostSchema = new mongoose.Schema({
       },
     },
   ],
+  createdAt: { type: Date, default: Date.now },
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 

@@ -57,12 +57,12 @@ function Home() {
               All your posts
             </Link>
             <div className="d-flex flex-wrap justify-content-center">
-              {/* {posts?.toReversed().map((post, index) => {
+              {posts?.toReversed().map((post, index) => {
                 if (index < 3) {
                   return <PostCard key={index} post={post} />;
                 }
                 return null;
-              })} */}
+              })}
             </div>
           </>
         ) : (

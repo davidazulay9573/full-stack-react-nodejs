@@ -2,7 +2,7 @@ import Form from "../../components/Form";
 import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../../utils/formikValidation";
+import formikValidation from "../../lib/utils/formikValidation";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import usePost from "../../lib/hooks/posts/usePost";

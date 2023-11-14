@@ -116,12 +116,12 @@ async function LikeAndDisLike(req, res) {
     });
 
     if (isLiked) {
-      const updatedpost = await Post.findOneAndUpdate(
+      const updatedPost = await Post.findOneAndUpdate(
         { _id: req.params.id },
         { $pull: { likes: { user_id: req.user._id } } },
         { new: true }
-      ).select("-__v -bizNumber");
-      if (!updatedpost) {
+      ).select("-__v ");
+      if (!updatedPost) {
         sendError(res, 404, "The post with the given ID was not found");
         return;
       }
@@ -132,7 +132,7 @@ async function LikeAndDisLike(req, res) {
       { _id: req.params.id },
       { $push: { likes: { user_id: req.user._id } } },
       { new: true }
-    ).select("-__v -bizNumber");
+    ).select("-__v ");
     if (!post) {
       sendError(res, 404, "The post with the given ID was not found");
       return;

@@ -7,7 +7,9 @@ export const register = createAsyncThunk(
     try {
       const { data } = await userService.createUser(user);
       return data;
-    } catch ({ response }) {
+    } catch ({ response} ) {
+     console.log(response.data);
+     console.log(thunkAPI.rejectWithValue(extractErrorMessage(response.data)));
       return thunkAPI.rejectWithValue(extractErrorMessage(response));
     } 
   }
@@ -63,7 +65,7 @@ const authSlice = createSlice({
 });
 
 function extractErrorMessage(response) {
-  if (response && response.status === 400) {
+  if ((response && response.status === 400) || response.status === 401) {
     return response.data;
   }
 }

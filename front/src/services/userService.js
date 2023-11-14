@@ -9,11 +9,11 @@ function setCommonHeader() {
 setCommonHeader();
 
 export function createUser(user) {
-  return httpService.post("/users", user);
+  return httpService.post("/connection/sign-up", user);
 }
 
 export async function login(user) {
-  const response = await httpService.post("/auth", user);
+  const response = await httpService.post("/connection/sign-in", user);
   const token = await response.data.token;
   localStorage.setItem(TOKEN_LS_KEY, token);
   setCommonHeader();

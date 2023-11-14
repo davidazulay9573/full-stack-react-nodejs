@@ -25,16 +25,27 @@ function SignUp() {
     validate(values) {
       return formikValidation(values)(
         Joi.object({
-          email: Joi.string().min(1).max(250).required().email({ tlds: { allow: false } }).label("Email"),
-          password: Joi.string().min(6).max(250).required().regex(passwordRegex).label("Password").messages({
-              "string.pattern.base": `The "Password" must contain at least 8 Characters, and include 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*-_) and 4 digits(0-9).`,
+          email: Joi.string()
+            .min(1)
+            .max(250)
+            .required()
+            .email({ tlds: { allow: false } })
+            .label("Email"),
+          password: Joi.string()
+            .min(6)
+            .max(250)
+            .required()
+            .pattern(passwordRegex)
+            .label("Password")
+            .messages({
+              "string.pattern.base": `The "Password" must contain at least 8 Characters, including 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*_-) and 4 digits(0-9).`,
             }),
           name: Joi.string().min(2).max(250).required().label("Name"),
         })
       );
     },
     onSubmit(values) {
-      signUp({ ...values, biz: false }, "/sign-in");
+      signUp({ ...values, isBusiness : false }, "/sign-in");
     },
   });
 

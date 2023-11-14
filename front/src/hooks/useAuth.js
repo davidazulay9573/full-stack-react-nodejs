@@ -22,16 +22,17 @@ function useAuth() {
     dispatch(logout());
   };
 
-  
   const signUp = async (user, path = "/sign-in") => {
     try {
-      await dispatch(register(user)).unwrap();
+    const data = await dispatch(register(user)).unwrap();
       toast.success("The acount was created successfully 👌");
       if (user.biz) {
         const { email, password } = user;
         signIn({ email, password }, path);
       }
       navigate(path);
+      console.log(data);
+
     } catch (error) {
       toast.error(error);
     }

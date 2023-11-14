@@ -1,0 +1,56 @@
+01:37 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:38 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:38 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:38 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:40 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:41 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["name"],"message":"\"name\" must be of type object"},{"path":["phone"],"message":"\"phone\" is required"},{"path":["address"],"message":"\"address\" is required"},{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:41 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["name"],"message":"\"name\" must be of type object"},{"path":["phone"],"message":"\"phone\" is required"},{"path":["address"],"message":"\"address\" is required"},{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:44 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["name"],"message":"\"name\" must be of type object"},{"path":["phone"],"message":"\"phone\" is required"},{"path":["address"],"message":"\"address\" is required"},{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:45 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["name"],"message":"\"name\" must be of type object"},{"path":["phone"],"message":"\"phone\" is required"},{"path":["address"],"message":"\"address\" is required"},{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:50 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:51 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:51 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+01:52 - Path: /connection/sign-up, Status Code: 404, Message: Page not found.
+01:52 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:53 - Path: /api/connection/sign-up, Status Code: 404, Message: Page not found.
+01:53 - Path: /connection/sign-up, Status Code: 404, Message: Page not found.
+01:54 - Path: /connection/sign-up, Status Code: 404, Message: Page not found.
+01:55 - Path: /connection/sign-up, Status Code: 500, Message: dbError: User validation failed: isBusiness: Path `isBusiness` is required., address.houseNumber: Path `address.houseNumber` is required., address.street: Path `address.street` is required., address.city: Path `address.city` is required., address.country: Path `address.country` is required., phone: Path `phone` is required., name.last: Path `name.last` is required., name.first: Path `name.first` is required. 
+02:01 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["isBussines"],"message":"\"isBussines\" is not allowed"}]}
+02:02 - Path: /connection/sign-up, Status Code: 500, Message: dbError: User validation failed: biz: Path `biz` is required. 
+02:02 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+02:02 - Path: /connection/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isBusiness"],"message":"\"isBusiness\" is required"},{"path":["biz"],"message":"\"biz\" is not allowed"}]}
+02:04 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:04 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:06 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:11 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 404, Message: Page not found.
+02:15 - Path: /favicon.ico, Status Code: 404, Message: Page not found.
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:15 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:18 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:18 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:18 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:18 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:20 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:23 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:23 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:32 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:33 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:33 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:47 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+02:48 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:00 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:01 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:03 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:05 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:14 - Path: /connection/sign-up, Status Code: 401, Message: User already registered
+03:15 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or password
+03:15 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or passwordundefined
+03:15 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or passwordundefined
+03:16 - Path: /connection/sign-in, Status Code: 401, Message: Invalid email or passwordundefined
+03:16 - Path: /connection/sign-up, Status Code: 401, Message: User already registered

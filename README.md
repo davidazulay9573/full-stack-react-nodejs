@@ -1,16 +1,16 @@
 # `Card-Actions` project !
- 
+
 Is a system that includes logging in and registering users as a standard or business user,
 
 Includes authentication process using `Json Web Token` technology.
 
-Signing in with a business user allows you to create new cards. and CRUD them.
-## Server-Side 
+Signing in with a business user allows you to create new posts. and CRUD them.
+
+## Server-Side
 
 ### Using `node.js` && `express`
 
 To building the server.
-
 
 ### Using `mongo-db`
 
@@ -20,18 +20,22 @@ To store the data.
 
 To authenticate users
 
-
 Make sure you have installed `Mongo-DB` before starting the server.
-###  Run in terminal :
-``` 
+
+### Run in terminal :
+
+```
 cd backe
 ```
+
 ```
 npm i
 ```
+
 ```
 npm run dev
 ```
+
 ## Client-Side
 
 ### The client-side based on `React` framwork.
@@ -56,17 +60,19 @@ To manage API requests in an orderly manner.
 For styleing.
 
 ### Run in terminal :
-``` 
+
+```
 cd front
 ```
+
 ```
 npm i
 ```
+
 ```
 npm start
 ```
+
 Now it's all ready to go!
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-

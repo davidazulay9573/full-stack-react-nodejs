@@ -3,7 +3,7 @@ import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import { formikValidation, passwordRegex } from "../../utils/formikValidation";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../lib/hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignUpBiz() {
@@ -47,7 +47,7 @@ function SignUpBiz() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, isBusiness: true }, "/my-cards");
+      signUp({ ...values, isBusiness: true }, "/my-posts");
     },
   });
   if (user) return <Navigate to="/" />;

@@ -1,4 +1,4 @@
-import useAuth from "../hooks/useAuth";
+import useAuth from "../lib/hooks/useAuth";
 import { Navigate } from "react-router-dom";
 function ProtectedRoute({ children, is_only_biz }) {
   const [user] = useAuth();

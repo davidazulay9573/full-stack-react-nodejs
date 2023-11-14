@@ -1,5 +1,5 @@
 import Input from "./Input";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../lib/hooks/useTheme";
 
 function Form({ inputs = [], formik, buttonTitle }) {
   const [theme] = useTheme();

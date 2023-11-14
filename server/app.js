@@ -4,9 +4,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 const cors = require("cors");
-const usersRouter = require("./routes/users");
-const connectionRoute = require("./routes/connection");
-const cardsRouter = require("./routes/cards");
+const usersRouter = require("./users/route");
+const authRoute = require("./auth/route");
+const postsRouter = require("./posts/route");
 const fileLogger = require("./middleware/fileLogger");
 const sendError = require("./utils/sendError");
 
@@ -33,8 +33,8 @@ app.use(fileLogger);
 app.use(express.static("public"));
 
 app.use("/users", usersRouter);
-app.use("/connection", connectionRoute);
-app.use("/cards", cardsRouter);
+app.use("/auth", authRoute);
+app.use("/posts", postsRouter);
 
 app.all("*", (req, res) => {
   sendError(res, 404, "Page not found.");

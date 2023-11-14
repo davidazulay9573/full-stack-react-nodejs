@@ -1,11 +1,11 @@
-import { NavLink} from "react-router-dom";
-import useAuth from "../hooks/useAuth";
-import useTheme from "../hooks/useTheme";
+import { NavLink } from "react-router-dom";
+import useAuth from "../lib/hooks/useAuth";
+import useTheme from "../lib/hooks/useTheme";
 
 function NavBar() {
-  const [user,,, sinout] = useAuth();
+  const [user, , , sinout] = useAuth();
   const [theme, changeTheme] = useTheme();
-  
+
   return (
     <nav
       className={`navbar navbar-expand-sm navbar-${theme} bg-${theme} shadow-sm p-3 `}
@@ -13,12 +13,10 @@ function NavBar() {
     >
       <NavLink to="/" className="nav-link">
         <h4 className="navbar-brand">
-          Card__<i className="bi bi-card-checklist"></i>__Actions
+          Post__<i className="bi bi-post-checklist"></i>__Actions
         </h4>
       </NavLink>
-      <button
-        className={`btn btn-light m-1`}
-        onClick={changeTheme} >
+      <button className={`btn btn-light m-1`} onClick={changeTheme}>
         {theme === "light" ? (
           <i className="bi bi-moon-stars-fill"></i>
         ) : (
@@ -26,9 +24,7 @@ function NavBar() {
         )}
       </button>
       {user && (
-        <button
-          onClick={sinout}
-          className={`btn btn-light m-1`}>
+        <button onClick={sinout} className={`btn btn-light m-1`}>
           <i className="bi bi-box-arrow-left"></i> Log Out
         </button>
       )}
@@ -38,14 +34,14 @@ function NavBar() {
           {user?.isBusiness && (
             <>
               <li className="nav-item">
-                <NavLink to="/cards" className="nav-link">
-                  My Cards
+                <NavLink to="/posts" className="nav-link">
+                  posts
                 </NavLink>
                 <></>
               </li>
               <li className="nav-item">
-                <NavLink to="/cards/add" className="nav-link">
-                  Add Card
+                <NavLink to="/posts/add" className="nav-link">
+                  Add post
                 </NavLink>
               </li>
             </>

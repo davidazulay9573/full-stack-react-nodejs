@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
   )
     .toString()
     .padStart(2, "0")},${date.getFullYear()}`;
-
+  !fs.existsSync("./logs") && fs.mkdirSync('./logs')
   const logStream = fs.createWriteStream(
     `./logs/${fileName}.log`,
     {

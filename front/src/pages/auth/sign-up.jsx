@@ -3,7 +3,7 @@ import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import { formikValidation, passwordRegex } from "../../utils/formikValidation";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../../lib/hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignUp() {

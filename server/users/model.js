@@ -27,6 +27,12 @@ const usersSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+    minlength: 11,
+    maxlength: 1024,
+  },
   createdAt: { type: Date, default: Date.now },
   posts: Array,
   followers: [

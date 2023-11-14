@@ -2,7 +2,6 @@ import PageHeader from "../../components/PageHeader";
 import PostCard from "../../components/PostCard";
 import AddPost from "../../components/AddPost";
 import usePosts from "../../lib/hooks/posts/usePosts";
-import { Link } from "react-router-dom";
 
 function Posts() {
   const posts = usePosts();
@@ -17,12 +16,7 @@ function Posts() {
           })}
         </div>
       ) : (
-        <>
-          <h4>No posts Yet! </h4>
-          <p>
-            <Link to="/add"> Click </Link>to add a new post!
-          </p>
-        </>
+        <h4>No posts Yet! </h4>    
       )}
     </div>
   );

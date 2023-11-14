@@ -1,12 +1,36 @@
-import Form from "../components/Form";
-import PageHeader from "../components/PageHeader";
+import Form from "../../components/Form";
+import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../utils/formikValidation";
-import useCardActions from "../hooks/useCard/useCardActions";
+import formikValidation from "../../utils/formikValidation";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import useCard from "../../hooks/useCard/useCard";
+import useCardActions from "../../hooks/useCard/useCardActions";
 
-function AddCard() {
-  const [addCard] = useCardActions();
+function EditCard() {
+  const { id } = useParams();
+  const card = useCard(id);
+  const [, editCard] = useCardActions();
+
+  useEffect(() => {
+    if (!card) return;
+    const {
+      bizName = "",
+      bizDescription = "",
+      bizAddress = "",
+      bizPhone = "",
+      bizImage = "",
+    } = card;
+
+    formik.setValues({
+      bizName,
+      bizDescription,
+      bizAddress,
+      bizPhone,
+      bizImage,
+    });
+  }, [card]);
 
   const inputs = [
     { name: "bizName", lable: "Name", type: "text" },
@@ -15,7 +39,6 @@ function AddCard() {
     { name: "bizPhone", lable: "Phone", type: "text" },
     { name: "bizImage", lable: "Image", type: "text" },
   ];
-
   const formik = useFormik({
     validateOnMount: true,
     initialValues: {
@@ -41,24 +64,24 @@ function AddCard() {
             .required()
             .regex(/^0[2-9]\d{7,8}$/)
             .label("Phone"),
-          bizImage: Joi.string().min(11).max(1024).allow("").label("Image"),
+          bizImage: Joi.string().min(11).max(1024).label("Image"),
         })
       );
     },
     onSubmit(values) {
-      addCard(values);
+      editCard(values, id);
     },
   });
 
   return (
     <div className="container-md w-50 text-center">
       <PageHeader
-        title="Add A New Card"
-        description="To create a new card, please fill in the following details! "
+        title="Edit Your Card"
+        description="Please fill in the new details! "
       ></PageHeader>
-      <Form inputs={inputs} formik={formik} buttonTitle="Add-Card"></Form>
+      <Form inputs={inputs} formik={formik} buttonTitle="Edit-Card"></Form>
     </div>
   );
 }
 
-export default AddCard;
+export default EditCard;

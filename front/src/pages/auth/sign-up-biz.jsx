@@ -1,13 +1,14 @@
-import Form from "../components/Form";
-import PageHeader from "../components/PageHeader";
+import Form from "../../components/Form";
+import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import { formikValidation, passwordRegex } from "../utils/formikValidation";
-import useAuth from "../hooks/useAuth";
+import { formikValidation, passwordRegex } from "../../utils/formikValidation";
+import useAuth from "../../hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
-function SignUp() {
-   const [user, isLoading,,, signUp] = useAuth();
+function SignUpBiz() {
+  const [user, isLoading, , , signUp] = useAuth();
+
   const inputs = [
     { name: "name", lable: "Name", type: "text" },
     { name: "email", lable: "Email", type: "email" },
@@ -21,7 +22,6 @@ function SignUp() {
       email: "",
       password: "",
     },
-
     validate(values) {
       return formikValidation(values)(
         Joi.object({
@@ -40,31 +40,34 @@ function SignUp() {
             .messages({
               "string.pattern.base": `The "Password" must contain at least 8 Characters, including 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*_-) and 4 digits(0-9).`,
             }),
-          name: Joi.string().min(2).max(250).required().label("Name"),
+          name: Joi.string().min(2).max(250).required().label("Name").messages({
+            "string.pattern.base": `The "Password" must contain at least 8 Characters, and include 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*-_) and 4 digits(0-9).`,
+          }),
         })
       );
     },
     onSubmit(values) {
-      signUp({ ...values, isBusiness : false }, "/sign-in");
+      signUp({ ...values, isBusiness: true }, "/my-cards");
     },
   });
-
   if (user) return <Navigate to="/" />;
   return (
-    <div>
-      <div className="container-md w-50 text-center">
-        <PageHeader
-          title="Sign Up"
-          description="Please enter your details! "
-        ></PageHeader>
-          {isLoading && <h5>Loading...</h5> }
-        <Form inputs={inputs} formik={formik} buttonTitle="Sign-Up"></Form>
-        <p>
-          You already have an account? <Link to="/sign-in">Sign-in</Link>{" "}
-        </p>
-      </div>
+    <div className="container-md w-50 text-center">
+      <PageHeader
+        title="Sign Up For Business"
+        description="Please enter your details!"
+      ></PageHeader>
+      {isLoading && <h5>Loading...</h5>}
+      <Form
+        inputs={inputs}
+        formik={formik}
+        buttonTitle="Sign-Up Business"
+      ></Form>
+      <p>
+        You already have an account? <Link to="/sign-in">Sign-in</Link>
+      </p>
     </div>
   );
 }
 
-export default SignUp;
+export default SignUpBiz;

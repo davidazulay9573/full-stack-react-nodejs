@@ -85,3 +85,5 @@
 04:32 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
 04:32 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 401, Message: Unauthorized
 04:33 - Path: /cards/6552d995d9a6dfed07208ebb, Status Code: 404, Message: The card with the given ID was not found
+04:52 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized
+04:52 - Path: /cards/6552da4ed9a6dfed07208ebf, Status Code: 401, Message: Unauthorized

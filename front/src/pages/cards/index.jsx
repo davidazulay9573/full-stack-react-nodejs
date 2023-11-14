@@ -1,6 +1,6 @@
-import PageHeader from "../components/PageHeader";
-import Card from "../components/Card";
-import useCards from "../hooks/useCard/useCards";
+import PageHeader from "../../components/PageHeader";
+import Card from "../../components/Card";
+import useCards from "../../hooks/useCard/useCards";
 import { Link } from "react-router-dom";
 
 function MyCards() {

@@ -1,13 +1,13 @@
-import Form from "../components/Form";
-import PageHeader from "../components/PageHeader";
+import Form from "../../components/Form";
+import PageHeader from "../../components/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
-import { formikValidation, passwordRegex } from "../utils/formikValidation";
-import useAuth from "../hooks/useAuth";
+import { formikValidation, passwordRegex } from "../../utils/formikValidation";
+import useAuth from "../../hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
 
 function SignIn() {
-  const [user,isLoading ,signIn] = useAuth();
+  const [user, isLoading, signIn] = useAuth();
 
   const inputs = [
     { name: "email", lable: "Email", type: "email" },
@@ -35,7 +35,9 @@ function SignIn() {
             .required()
             .pattern(passwordRegex)
             .label("Password")
-            .messages({"string.pattern.base": `The "Password" must contain at least 8 Characters, including 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*_-) and 4 digits(0-9).`}),
+            .messages({
+              "string.pattern.base": `The "Password" must contain at least 8 Characters, including 1 Upper-Case letter, 1 Lower-Case letter, 1 Special Symbol(!@%$#^&*_-) and 4 digits(0-9).`,
+            }),
         })
       );
     },
@@ -50,8 +52,8 @@ function SignIn() {
         title="Sign In"
         description="Please enter your details!"
       ></PageHeader>
-         
-       {isLoading && <h5>Loading...</h5> }
+
+      {isLoading && <h5>Loading...</h5>}
       <Form inputs={inputs} formik={formik} buttonTitle="Sign-In"></Form>
       <p>
         Don't have an account yet? <Link to="/sign-up">Sign-up</Link>

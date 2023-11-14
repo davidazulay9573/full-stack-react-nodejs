@@ -21,7 +21,7 @@ function Card({card}) {
             <p className="fs-6 me-2 text-secondary">
               <i className="bi bi-bank2"></i>
             </p>
-            <Link to={`/my-cards/${card._id}`} className="fs-6 nav-link">
+            <Link to={`/cards/${card._id}`} className="fs-6 nav-link">
               {card.bizName}
             </Link>
           </div>
@@ -51,17 +51,17 @@ function Card({card}) {
           </div>
         </ul>
         <div className="d-flex justify-content-between me-3 ms-3">
-          <Link to={`/my-cards/edit-card/${card._id}`}>
+          <Link to={`/cards/edit/${card._id}`}>
             <button className="btn btn-primary border-0 fs-5 hover-zoomin">
               <i className="bi bi-pencil"></i>
             </button>
           </Link>
-          <Link to={`/my-cards/${card._id}`}>
+          <Link to={`/cards/${card._id}`}>
             <button className="btn btn-success border-0 fs-5 hover-zoomin">
               <i className="bi bi-eye"></i>
             </button>
           </Link>
-          <Link to={`/my-cards/delete-card/${card._id}`}>
+          <Link to={`/cards/delete/${card._id}`}>
             <button className="btn btn-danger border-0 fs-5 hover-zoomin">
               <i className="bi bi-trash3"></i>
             </button>

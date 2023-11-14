@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import useCard from "../hooks/useCard/useCard";
-import useTheme from "../hooks/useTheme";
+import useCard from "../../hooks/useCard/useCard";
+import useTheme from "../../hooks/useTheme";
 function Card() {
   const { id } = useParams();
   const card = useCard(id);
-  const [ theme] = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div className=" text-center d-flex flex-wrap justify-content-center">

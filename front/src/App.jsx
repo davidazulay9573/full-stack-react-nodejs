@@ -1,17 +1,17 @@
-import Home from './pages/home';
-import About from './pages/about';
-import SignIn from './pages/sign-in';
-import SignUp from './pages/sign-up';
-import SignUpBiz from './pages/sign-up-biz';
-import MyCards from './pages/my-cards';
-import AddCard from './pages/add-card';
-import EditCard from './pages/edit-card';
-import DeleteCard from './pages/delete-card';
-import Card from './pages/[card]';
+import Home from "./pages/home";
+import About from "./pages/about";
+import SignIn from "./pages/auth/sign-in";
+import SignUp from "./pages/auth/sign-up";
+import SignUpBiz from "./pages/auth/sign-up-biz";
+import MyCards from "./pages/cards";
+import AddCard from "./pages/cards/add";
+import EditCard from "./pages/cards/edit";
+import DeleteCard from "./pages/cards/delete";
+import Card from "./pages/cards/[card]";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
-import useTheme from './hooks/useTheme';
+import useTheme from "./hooks/useTheme";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route path="sign-up" element={<SignUp />} />
           <Route path="sign-up-biz" element={<SignUpBiz />} />
           <Route
-            path="add-card"
+            path="cards/add"
             element={
               <ProtectedRoute is_only_biz>
                 <AddCard />
@@ -35,7 +35,7 @@ function App() {
             }
           />
           <Route
-            path="my-cards"
+            path="cards"
             element={
               <ProtectedRoute is_only_biz>
                 <MyCards />
@@ -43,7 +43,7 @@ function App() {
             }
           />
           <Route
-            path="my-cards/edit-card/:id"
+            path="cards/edit/:id"
             element={
               <ProtectedRoute is_only_biz>
                 <EditCard />
@@ -51,15 +51,15 @@ function App() {
             }
           />
           <Route
-            path="my-cards/delete-card/:id"
+            path="cards/delete/:id"
             element={
               <ProtectedRoute is_only_biz>
                 <DeleteCard />
               </ProtectedRoute>
             }
           />
-          <Route 
-            path="my-cards/:id"
+          <Route
+            path="cards/:id"
             element={
               <ProtectedRoute is_only_biz>
                 <Card />

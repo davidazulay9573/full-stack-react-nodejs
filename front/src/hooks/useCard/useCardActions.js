@@ -13,7 +13,7 @@ function useCardActions() {
       }
      await cardService.createCard(body);
       toast.success("The card was created successfully 👌");
-      navigate("/my-cards");
+      navigate("/cards");
     } catch ({ response }) {
       if (response && response.status === 400) {
         toast.error(response.data);
@@ -25,10 +25,10 @@ function useCardActions() {
     try {
        await cardService.deleteCard(id);
         toast.success("The card has been successfully deleted 👌");
-        navigate('/my-cards');
+        navigate('/cards');
 
     } catch  {
-        navigate('/my-cards');
+        navigate('/cards');
     }
        
   };
@@ -40,7 +40,7 @@ function useCardActions() {
         body.bizImage = bizImage;
       }
       await cardService.updateCard(id, body);
-      navigate("/my-cards");
+      navigate("/cards");
       toast.success("The card has been successfully updated 👌");
 
     } catch ({ response }) {

@@ -38,13 +38,13 @@ function NavBar() {
           {user?.isBusiness && (
             <>
               <li className="nav-item">
-                <NavLink to="/my-cards" className="nav-link">
+                <NavLink to="/cards" className="nav-link">
                   My Cards
                 </NavLink>
                 <></>
               </li>
               <li className="nav-item">
-                <NavLink to="/add-card" className="nav-link">
+                <NavLink to="/cards/add" className="nav-link">
                   Add Card
                 </NavLink>
               </li>

@@ -4,30 +4,36 @@ import useUser from "../lib/hooks/users/useUser";
 
 const UserCard = ({ id }) => {
   const [theme] = useTheme();
-  const user = useUser(id)
+  const[user, handleFollow, isFollow] = useUser(id)
   return (
-   <div
+    <div
       className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 bg-body-tertiary rounded ${theme}`}
     >
       <div className="d-flex align-items-center">
-       <Link to={`/users/${id}`}>
-            <img
-              src={user?.image}
-              className="rounded-circle img-fluid"
-              alt="Profile"
-              style={{ width: "4rem", height: "4rem" }}
-           />
-       </Link>
+        <Link to={`/users/${id}`}>
+          <img
+            src={user?.image}
+            className="rounded-circle img-fluid"
+            alt="Profile"
+            style={{ width: "4rem", height: "4rem" }}
+          />
+        </Link>
         <div className="flex-grow-1 ms-3">
           <h5 className="card-title text-center">{user?.name}</h5>
         </div>
-        <button className="btn btn-primary">
-          Follow <i className="bi bi-plus-circle-fill"></i>
+        <button
+          onClick={handleFollow}
+          className={`btn ${isFollow() ? "btn-danger" : "btn-primary"}`}
+        >
+          {isFollow() ? "Unfollow" : "Follow"}
+          <i
+            className={`bi ${
+              isFollow () ? "bi-person-x-fill" : "bi-person-plus-fill"
+            }`}
+          ></i>
         </button>
       </div>
-
     </div>
-
   );
 };
 

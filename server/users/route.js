@@ -43,6 +43,6 @@ router.delete(
   deleteUser
 );
 
-router.patch("/:id", authentication(), followAndDisFollow);
+router.patch("/:id", authentication(), followAndDisFollow );
 
 module.exports = router;

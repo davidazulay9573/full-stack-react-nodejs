@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import useTheme from "../lib/hooks/global-states/useTheme";
 import dateFormat from "../lib/utils/date-format";
@@ -35,12 +34,12 @@ function PostCard({ id }) {
               style={{ width: "100%", height: "150px", objectFit: "contain" }}
             />
           )}
-          <Link to={`/posts/${post._id}`}>
-            <div className="card-body">
+          <div className="card-body">
+            <Link className=" text-white" to={`/posts/${post._id}`}>
               <h5 className="card-title">{post?.title}</h5>
               <p className="card-text">{post?.description}</p>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="card-footer text-muted">
@@ -67,10 +66,16 @@ function PostCard({ id }) {
                     isLiked() ? "bi-hand-thumbs-up-fill" : "bi-hand-thumbs-up"
                   }`}
                 ></i>
-                
-                <span 
-                  onClick={() => setActiveTab((activeTab) =>activeTab === "likes" ? null : "likes" )} 
-                  className="ms-1">{likes.length}     
+
+                <span
+                  onClick={() =>
+                    setActiveTab((activeTab) =>
+                      activeTab === "likes" ? null : "likes"
+                    )
+                  }
+                  className="ms-1"
+                >
+                  {likes.length}
                 </span>
               </button>
             </div>

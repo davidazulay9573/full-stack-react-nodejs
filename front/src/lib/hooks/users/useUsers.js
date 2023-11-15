@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import userService from "../../api-request/users";
 
-function useUsers(ids) {
+function useUsers() {
   const [users, setUsers] = useState([]);
-  
   useEffect(() => {
     (async () => {
-      const { data } = !ids
-        ? await userService.getUsers()
-        : await userService.getUsers(ids); 
+      const { data } = await userService.getUsers()
       setUsers(data);
     })();
   }, []);

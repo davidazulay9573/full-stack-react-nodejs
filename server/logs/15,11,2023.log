@@ -839,3 +839,94 @@
 02:57 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
 02:57 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
 02:57 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/[object%20Object], Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:22 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+03:42 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+03:43 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+04:01 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+04:01 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+04:01 - Path: /posts/true, Status Code: 404, Message: The post with the given ID was not found
+04:02 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+04:02 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+04:02 - Path: /posts/true, Status Code: 404, Message: The post with the given ID was not found
+04:08 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+04:08 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+04:12 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+04:13 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+04:14 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+04:14 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "6553ed98db9ab58dbff6d691" (type string) 
+04:15 - Path: /auth/sign-in, Status Code: 404, Message: Page not found.
+04:15 - Path: /auth/sign-in, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["name"],"message":"\"name\" is not allowed"},{"path":["isBusiness"],"message":"\"isBusiness\" is not allowed"}]}
+04:16 - Path: /auth/sign-in, Status Code: 401, Message: Invalid email or password
+04:16 - Path: /auth/sign-in, Status Code: 401, Message: Invalid email or password
+04:16 - Path: /auth/sign-up, Status Code: 400, Message: {"message":"Bad fields","fields":[{"path":["isContentEditor"],"message":"\"isContentEditor\" is required"},{"path":["isBusiness"],"message":"\"isBusiness\" is not allowed"}]}
+04:19 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:21 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:21 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:21 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:22 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:22 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:22 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:29 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: nodeserver.users index: email_1 dup key: { email: "bla@gmail.com" } 
+04:30 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string) 
+04:33 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 500, Message: dbError: Class constructor ObjectId cannot be invoked without 'new' 
+04:52 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Database error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+04:52 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Database error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+04:52 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Database error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+04:55 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+04:55 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+04:56 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)

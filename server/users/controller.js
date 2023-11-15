@@ -1,5 +1,6 @@
 const { User } = require("./model");
 const sendError = require("../utils/sendError");
+const { default: mongoose } = require("mongoose");
 
 async function getUser(req, res) {
   try {
@@ -81,43 +82,35 @@ async function deleteUser(req, res) {
     sendError(res, 500, `dbError: ${error.message} `);
   }
 }
-
 async function followAndDisFollow(req, res) {
   try {
-    const isFollow = await User.findOne({
-      _id: req.params.id,
-      followers: req.user._id,
+    const targetUserId = req.params.id;
+    const currentUserId = req.user._id;
+
+    const targetUser = await User.findOne({
+      _id: targetUserId,
+      "followers.user_id": currentUserId,
     });
 
-    if (isFollow) {
-      const updatedUser = await User.findOneAndUpdate(
-        { _id: req.params.id },
-        { $pull: { likes: { user_id: req.user._id } } },
-        { new: true }
-      ).select("-__v ");
-      if (!updatedUser) {
-        sendError(res, 404, "The post with the given ID was not found");
-        return;
-      }
-      res.send(updatedUser.followers);
-      return;
+    let update;
+    if (targetUser) {
+      update = { $pull: { followers: { user_id: currentUserId } } };
+    } else {
+      update = { $addToSet: { followers: { user_id: currentUserId } } };
     }
-    const user = await User.findOneAndUpdate(
-      { _id: req.params.id },
-      { $push: { followers: { user_id: req.user._id } } },
-      { new: true }
-    ).select("-__v ");
-    if (!user) {
-      sendError(res, 404, "The post with the given ID was not found");
-      return;
+
+    const updatedUser = await User.findByIdAndUpdate(targetUserId, update, {
+      new: true,
+      select: "-password -__v -loginAttempts -blockTime -isAdmin",
+    });
+
+    if (!updatedUser) {
+      return sendError(res, 404, "User not found");
     }
-    res.send(user.followers);
+
+    res.send(updatedUser.followers);
   } catch (error) {
-    if (error.path === "_id") {
-      sendError(res, 404, "The post with the given ID was not found");
-      return;
-    }
-    sendError(res, 500, `dbError: ${error.message} `);
+    sendError(res, 500, `Database error: ${error.message}`);
   }
 }
 

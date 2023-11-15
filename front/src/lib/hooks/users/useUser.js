@@ -1,15 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import userService from "../../api-request/users";
+import useAuth from "../global-states/useAuth";
 function useUser(id) {
-  const [user, setUser] = useState(null);
+   
+   const [userCard, setUserCard] = useState(null);
+   const [userAuth] = useAuth()
 
-  useEffect(() => {
+   useEffect(() => {
     (async () => {
       const { data } = await userService.getUser(id);
-      setUser(data);
+      setUserCard(data);
     })();
-  }, [id]);
-  return user;
+  }, []);
+
+  const handleFollow = async() => {
+    const response = await userService.followAndDisFollow(id);
+    const followers = await response.data;
+    setUserCard({...userCard, followers : followers})   
+  }
+  
+  const isFollow = () => {
+   return userCard?.followers?.find((user) => user.user_id === userAuth._id);
+  }
+  return [userCard, handleFollow, isFollow];
 }
 
 export default useUser;

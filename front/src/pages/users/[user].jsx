@@ -7,7 +7,7 @@ import PostCard from "../../components/PostCard";
 const UserPage = () => {
   const [theme] = useTheme();
   const { id } = useParams();
-  const user = useUser(id);
+  const [user, handleFollow, isFollow ] = useUser(id);
   const posts = usePosts(id);
 
   return (
@@ -27,8 +27,16 @@ const UserPage = () => {
               <div className="card-body">
                 <h3 className="">{user?.name}</h3>
                 <p className="">{user?.email}</p>
-                <button className="btn btn-primary">
-                  Follow <i className="bi bi-plus-circle-fill"></i>{" "}
+                <button
+                  onClick={handleFollow}
+                  className={`btn ${isFollow() ? "btn-danger" : "btn-primary"}`}
+                >
+                  {isFollow() ? "Unfollow" : "Follow"}
+                  <i
+                    className={`bi ${
+                      isFollow() ? "bi-person-x-fill" : "bi-person-plus-fill"
+                    }`}
+                  ></i>
                 </button>
               </div>
             </div>
@@ -39,7 +47,7 @@ const UserPage = () => {
         {posts.length ? (
           <div className="d-flex flex-wrap p-4 justify-content-center">
             {posts.map((post) => {
-              return <PostCard key={post._id} post={post} />;
+              return <PostCard key={post._id} id={post._id} />;
             })}
           </div>
         ) : (

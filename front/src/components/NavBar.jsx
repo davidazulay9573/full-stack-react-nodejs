@@ -39,11 +39,6 @@ function NavBar() {
                 </NavLink>
                 <></>
               </li>
-              <li className="nav-item">
-                <NavLink to="/posts/add" className="nav-link">
-                  Add post
-                </NavLink>
-              </li>
             </>
           )}
 

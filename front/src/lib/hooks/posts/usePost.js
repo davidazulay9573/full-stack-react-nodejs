@@ -20,13 +20,11 @@ function usePost(id) {
        setUserPost((await userService.getUser(data.user_id)).data);
     })();
   }, [id]);
-
    
   const isLiked = () => {
     return likes?.find((like) => like.user_id === userAuth._id);
   };
 
-  
   const handleLike = async () => {
     const response = await postService.LikeAndDisLike(id);
     const likesRes = await response.data;
@@ -34,9 +32,7 @@ function usePost(id) {
   };
   
   const handleComment = () => {
-    
   }
-
   return [post, userPost, likes, handleLike, isLiked, comments, handleComment];
 }
 

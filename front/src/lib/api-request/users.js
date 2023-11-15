@@ -38,9 +38,12 @@ function getLoggedonUser() {
 function getUser(id) {
   return httpRequest.get(`/users/${id}`);
 }
-function getUsers(ids) {
-  const path = ids ? `/users/?ids=${JSON.stringify(ids)}` : `/users/`;
-  return httpRequest.get(path);
+function getUsers() {
+  return httpRequest.get('/users');
+}
+
+function followAndDisFollow(id) {
+  return httpRequest.patch(`/users/${id}`);
 }
 
 const userService = {
@@ -50,6 +53,7 @@ const userService = {
   getLoggedonUser,
   getUser,
   getUsers,
+  followAndDisFollow,
 };
 
 export default userService;

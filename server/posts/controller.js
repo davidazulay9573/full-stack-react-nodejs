@@ -1,4 +1,5 @@
 const { Post } = require("./model");
+const { User } = require('../users/model')
 const sendError = require("../utils/sendError");
 const _ = require("lodash");
 
@@ -23,7 +24,9 @@ async function getPosts(req, res) {
   try {
     const { user, search} = req.query;
     let posts = [];
-    if(user){ posts = await Post.find({ user_id: user }).select("-__v")}
+    if(user){ posts = await Post.find({ user_id: user })
+      .select("-__v")
+      .sort("-createdAt");}
     if (search) {
       const searchRegex = new RegExp(search, "i"); 
       posts = await Post.find({
@@ -31,15 +34,11 @@ async function getPosts(req, res) {
           { title: { $regex: searchRegex } },
           { description: { $regex: searchRegex } },
         ],
-      });
+      }).sort("-createdAt");;
     }
     if(!search && !user){
-      posts = await Post.find()
+      posts = await Post.find().sort("-createdAt");  
     }       
-    if (!posts.length) {
-      res.send([]);
-      return;
-    }
     res.send(posts);
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);

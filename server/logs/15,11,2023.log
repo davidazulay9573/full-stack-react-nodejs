@@ -1050,3 +1050,211 @@
 19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
 19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
 19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:09 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading 'id') 
+20:09 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading 'id') 
+20:09 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading 'id') 
+20:09 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading 'id') 
+20:10 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:10 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:10 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:10 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:11 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:11 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:11 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:11 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:12 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:12 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:13 - Path: /posts, Status Code: 500, Message: dbError: Cannot read properties of undefined (reading '_id') 
+20:14 - Path: /posts, Status Code: 500, Message: dbError: userIds is not defined 
+20:14 - Path: /posts, Status Code: 500, Message: dbError: userIds is not defined 
+20:14 - Path: /posts, Status Code: 500, Message: dbError: userIds is not defined 
+20:14 - Path: /posts, Status Code: 500, Message: dbError: userIds is not defined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:41 - Path: /posts, Status Code: 500, Message: dbError: The comparison function must be either a function or undefined 
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:45 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:49 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:50 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:53 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found
+20:54 - Path: /posts/undefined, Status Code: 404, Message: The post with the given ID was not found

@@ -35,7 +35,7 @@ function Home() {
       {user && !user?.isContentEditor && (
         <h5 className="p-2">
           <p>
-            In this acount you can only get in! <br />
+            In this acount you can only Follow after users and read posts! <br />
             If you want to add posts you need to
           </p>
           <Link
@@ -43,7 +43,7 @@ function Home() {
             onClick={signOut}
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
-            Sign-up-business
+            Sign-up-Editor
           </Link>
         </h5>
       )}

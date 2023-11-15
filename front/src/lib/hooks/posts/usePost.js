@@ -8,7 +8,6 @@ function usePost(id) {
   const [post, setPost] = useState([]);
   const [userPost, setUserPost] = useState(null);
   const [likes, setLikes] = useState(post?.likes || []);
-  const [comments, setComments] = useState(0);
   const [userAuth] = useAuth();
   
   useEffect(() => {
@@ -30,9 +29,7 @@ function usePost(id) {
     setLikes(likesRes || []);
   };
   
-  const handleComment = () => {
-  }
-  return [post, userPost, likes, handleLike, isLiked, comments, handleComment];
+  return [post, userPost, likes, handleLike, isLiked];
 }
 
 export default usePost;

@@ -27,6 +27,14 @@ function NavBar() {
 
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
+              <NavLink to="/about" className="nav-link">
+                About
+              </NavLink>
+            </li>
             {user && (
               <>
                 <li className="nav-item">
@@ -67,15 +75,13 @@ function NavBar() {
                 </li>
               </>
             )}
-            <li className="nav-item">
-              <NavLink to="/about" className="nav-link">
-                About
-              </NavLink>
-            </li>
           </ul>
 
           {user && (
-            <form onSubmit={handleSearch} className="d-flex mx-auto my-2 my-lg-0 w-50 d-none d-lg-flex">
+            <form
+              onSubmit={handleSearch}
+              className="d-flex mx-auto my-2 my-lg-0 w-50 d-none d-lg-flex"
+            >
               <input
                 className="form-control me-2"
                 type="search"

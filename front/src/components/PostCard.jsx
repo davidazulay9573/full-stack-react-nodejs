@@ -7,7 +7,7 @@ import usePost from "../lib/hooks/posts/usePost";
 
 function PostCard({ id }) {
  
-  const [post, userPost, likes, handleLike, isLiked, comments, handleComment] = usePost(id);
+  const [post, userPost, likes, handleLike, isLiked ] = usePost(id);
   const [theme] = useTheme();
   const [activeTab, setActiveTab] = useState(null);
   
@@ -46,14 +46,6 @@ function PostCard({ id }) {
         <div className="row">
           <div className="col">
             <div className="d-flex justify-content-start align-items-center">
-              <button
-                onClick={() => setActiveTab("comments")}
-                className="btn btn-outline-secondary me-2"
-                title="Comments"
-              >
-                <i className="bi bi-chat-right-text"></i>
-                <span className="ms-1">{comments.length}</span>
-              </button>
               <button
                 className={`btn ${
                   isLiked() ? "btn-primary" : "btn-outline-primary"

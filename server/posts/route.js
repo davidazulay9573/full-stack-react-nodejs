@@ -13,8 +13,8 @@ const {
   createPost,
 } = require("./controller");
 
-router.get("/", getPosts);
-router.get("/liked", getLikedPosts);
+router.get("/", authentication(), getPosts);
+router.get("/liked",authentication(), getLikedPosts);
 router.post(
   "/",
   authentication(),

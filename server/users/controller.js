@@ -27,11 +27,11 @@ async function getUsers(req, res) {
     const search = req.query.search;
    if (search) {
      const searchRegex = new RegExp(search, "i"); 
-     users = await User.find({ name: { $regex: searchRegex } });
+     users = await User.find({ name: { $regex: searchRegex } }).sort("-createdAt");;
    } else {
-     users = await User.find().select(
-       "-password -__v -loginAttempts -blockTime -isAdmin"
-     );
+     users = await User.find()
+       .select("-password -__v -loginAttempts -blockTime ")
+       .sort("-createdAt");;
    }
     res.send(users);
   } catch (error) {

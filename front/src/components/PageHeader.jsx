@@ -4,9 +4,11 @@ function PageHeader({ title, description }) {
     <div>
       <div className="row">
         <div className="col-12 mt-4">
-        <Link to='/' className="nav-link">Card__<i className="bi bi-card-checklist"></i>__Actions</Link> 
+          <Link to="/" className="nav-link">
+            Post__<i className="bi bi-card-checklist"></i>__Actions
+          </Link>
         </div>
-       
+
         <div className="col-12 mt-4">
           <h3>{title}</h3>
         </div>

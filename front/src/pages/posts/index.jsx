@@ -11,8 +11,8 @@ function Posts() {
       <AddPost />
       {posts.length ? (
         <div className="d-flex flex-wrap p-4 justify-content-center">
-          {posts.map((post) => {
-            return <PostCard key={post._id} post={post} />;
+          {posts.map((post, index) => {
+            return <PostCard key={index} id={post._id} />;
           })}
         </div>
       ) : (

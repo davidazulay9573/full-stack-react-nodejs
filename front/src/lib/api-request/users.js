@@ -28,27 +28,28 @@ function getJWT() {
   return localStorage.getItem(TOKEN_LS_KEY);
 }
 
-function getLoggeronUser() {
+function getLoggedonUser() {
   try {
     return jwtDecode(getJWT());
   } catch {
     return null;
   }
 }
-function getUser(id){
- return httpRequest.get(`/users/${id}`)
+function getUser(id) {
+  return httpRequest.get(`/users/${id}`);
 }
-function getUsers() {
- return httpRequest.get('/users')
+function getUsers(ids) {
+  const path = ids ? `/users/?ids=${JSON.stringify(ids)}` : `/users/`;
+  return httpRequest.get(path);
 }
 
 const userService = {
   createUser,
   login,
   logOut,
-  getLoggeronUser,
+  getLoggedonUser,
   getUser,
-  getUsers
+  getUsers,
 };
 
 export default userService;

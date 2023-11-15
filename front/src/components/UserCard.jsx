@@ -1,15 +1,16 @@
 import useTheme from "../lib/hooks/global-states/useTheme";
 import { Link } from "react-router-dom";
+import useUser from "../lib/hooks/users/useUser";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ id }) => {
   const [theme] = useTheme();
-
+  const user = useUser(id)
   return (
    <div
       className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 bg-body-tertiary rounded ${theme}`}
     >
       <div className="d-flex align-items-center">
-       <Link to={`/users/${user._id}`}>
+       <Link to={`/users/${id}`}>
             <img
               src={user?.image}
               className="rounded-circle img-fluid"

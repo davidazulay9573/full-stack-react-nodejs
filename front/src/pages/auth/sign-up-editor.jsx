@@ -50,7 +50,7 @@ function SignUpEditor() {
       );
     },
     onSubmit(values) {
-      signUp({ ...values, isContentEditor: true }, "/my-posts");
+      signUp({ ...values, isContentEditor: true }, "/posts");
     },
   });
   if (user) return <Navigate to="/" />;

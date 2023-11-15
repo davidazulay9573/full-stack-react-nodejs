@@ -6,7 +6,7 @@ function Users(){
  return (
     <div>
         {users.map((user, index) => {
-            return <UserCard key={index} user={user}/>
+            return <UserCard key={index} id={user._id}/>
         })}
     </div>
  )

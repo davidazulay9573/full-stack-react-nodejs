@@ -4,19 +4,19 @@ const authentication = require("../middleware/authentication");
 const authorization = require("../middleware/authorization");
 const validation = require("../middleware/validation");
 const {
-  getLoggeronUser,
-  getLoggeronUsers,
+  getUsers,
   updatedUser,
   deleteUser,
   followAndDisFollow,
   getLoggedOnUser,
+  getUser,
 } = require("./controller");
 
 router.get(
   "/",
   authentication(),
   authorization("isContentEditor", "isAdmin"),
-  getLoggeronUsers
+  getUsers
 );
 
 router.get("/me", authentication(), getLoggedOnUser);
@@ -25,7 +25,7 @@ router.get(
   "/:id",
   authentication(),
   authorization("isContentEditor", "isAdmin", "acountOwner"),
-  getLoggeronUser
+  getUser
 );
 
 router.put(

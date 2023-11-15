@@ -1,7 +1,7 @@
 const { User } = require("./model");
 const sendError = require("../utils/sendError");
 
-async function getLoggeronUser(req, res) {
+async function getUser(req, res) {
   try {
     const user = await User.findById(req.params.id).select(
       "-password -__v -loginAttempts -blockTime -isAdmin"
@@ -20,11 +20,12 @@ async function getLoggeronUser(req, res) {
   }
 }
 
-async function getLoggeronUsers(req, res) {
+async function getUsers(req, res) {
   try {
-    const users = await User.find().select(
+      const users = await User.find().select(
       "-password -__v -loginAttempts -blockTime -isAdmin"
     );
+    
     res.send(users);
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);
@@ -121,8 +122,8 @@ async function followAndDisFollow(req, res) {
 }
 
 module.exports = {
-  getLoggeronUser,
-  getLoggeronUsers,
+  getUser,
+  getUsers,
   getLoggedOnUser,
   updatedUser,
   deleteUser,

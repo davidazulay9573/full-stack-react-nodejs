@@ -29,7 +29,7 @@ export const logout = createAction("auth-logout", () => {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: { user: userService.getLoggeronUser(), isLoading: false },
+  initialState: { user: userService.getLoggedonUser(), isLoading: false },
   extraReducers: (builder) => {
     builder
       .addCase(logout, (state) => {
@@ -39,7 +39,7 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(login.fulfilled, (state) => {
-        state.user = userService.getLoggeronUser();
+        state.user = userService.getLoggedonUser();
         state.isLoading = false;
       })
       .addCase(login.rejected, (state) => {

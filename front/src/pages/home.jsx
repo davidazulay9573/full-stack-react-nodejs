@@ -59,7 +59,7 @@ function Home() {
             <div className="d-flex flex-wrap justify-content-center">
               {posts?.toReversed().map((post, index) => {
                 if (index < 3) {
-                  return <PostCard key={index} post={post} />;
+                  return <PostCard key={index} id={post._id} />;
                 }
                 return null;
               })}
@@ -68,7 +68,6 @@ function Home() {
         ) : (
           <>
             <h4>No posts Yet! </h4>
-            <Link to="/add"> Click </Link>to add a new Post!
           </>
         )
       ) : (

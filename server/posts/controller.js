@@ -54,16 +54,14 @@ async function createPost(req, res) {
   try {
     const post = new Post({
       ...req.body,
-      image:
-        req.body.image ||
-        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
+      image: req.body?.image, 
       user_id: req.user._id,
     });
     
     await post.save();
 
     res.send(
-      _.pick(post, ["title", "description", "_id", "user_id",])
+      _.pick(post, ["title", "description", "_id", "user_id", 'likes', "comments"])
     );
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);
@@ -128,6 +126,7 @@ async function LikeAndDisLike(req, res) {
       res.send(updatedPost.likes);
       return;
     }
+
     const post = await Post.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { likes: { user_id: req.user._id } } },

@@ -38,7 +38,7 @@ function About() {
           <Link to="/add-card">Create</Link> your first card! <br />
           <br />
           You already have posts? <br />
-          you can to jump to <Link to="/my-posts"> Your posts</Link>
+          you can to jump to <Link to="/posts"> Your posts</Link>
         </p>
       )}
     </div>

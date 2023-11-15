@@ -27,20 +27,39 @@ const usersSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
   image: {
     type: String,
     required: true,
     minlength: 11,
     maxlength: 1024,
   },
-  createdAt: { type: Date, default: Date.now },
-  posts: Array,
+
   followers: [
     {
       user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
       createdAt: { type: Date, default: Date.now },
     },
   ],
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  loginAttempts: {
+    type: Number,
+    default: 0,
+  },
+  blockTime: {
+    type: Date,
+  },
+  isBlocked: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 usersSchema.methods.generateAuthToken = function () {

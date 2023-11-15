@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 function SearchPosts() {
   const [searchParams] = useSearchParams();
-  const posts = usePosts(null, searchParams.get('search'));
+  const [posts, isLoading] = usePosts(null, searchParams.get('search'));
 
   return (
     <div className="text-center ">
@@ -17,7 +17,7 @@ function SearchPosts() {
           })}
         </div>
       ) : (
-        <h4>No posts Yet! </h4>
+        isLoading ? <h4>Loading...</h4> : <h4>No posts Yet! </h4>
       )}
     </div>
   );

@@ -28,8 +28,12 @@ function usePost(id) {
     const likesRes = await response.data;
     setLikes(likesRes || []);
   };
+
+  const isOwner = () => {
+    return post.user_id === userAuth._id;
+  }
   
-  return [post, userPost, likes, handleLike, isLiked];
+  return [post, userPost, likes, handleLike, isLiked, isOwner];
 }
 
 export default usePost;

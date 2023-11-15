@@ -11,7 +11,7 @@ import usePostActions from "../../lib/hooks/posts/usePostActions";
 
 function EditPost() {
   const { id } = useParams();
-  const post = usePost(id);
+  const [post] = usePost(id);
   const [, editPost] = usePostActions();
 
   useEffect(() => {

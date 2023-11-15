@@ -64,14 +64,13 @@ async function createPost(req, res) {
   try {
     const post = new Post({
       ...req.body,
-      image: req.body?.image, 
       user_id: req.user._id,
     });
     
     await post.save();
 
     res.send(
-      _.pick(post, ["title", "description", "_id", "user_id", 'likes', "comments"])
+      _.pick(post, ["title", "description", "_id", "user_id", 'likes'])
     );
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);

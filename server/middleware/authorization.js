@@ -1,11 +1,11 @@
-const { Card } = require("../posts/model");
+const { Post } = require("../posts/model");
 module.exports = (...authorizations) => {
   return async (req, res, next) => {
     if (authorizations.length) {
       if (
         (!authorizations.includes("acountOwner") ||
           req.user._id != req.params.id) &&
-        (!authorizations.includes("postOwner") || !(await ispostOwner(req)))
+        (!authorizations.includes("postOwner") || !(await isPostOwner(req)))
       ) {
         let authorizationsCounter = 0;
         authorizations
@@ -31,13 +31,13 @@ module.exports = (...authorizations) => {
   };
 };
 
-const ispostOwner = async (req) => {
+const isPostOwner = async (req) => {
   try {
-    const card = await Card.findOne({
+    const post = await Post.findOne({
       _id: req.params.id,
       user_id: req.user._id,
     });
-    if (!card) {
+    if (!post) {
       return false;
     }
     return true;

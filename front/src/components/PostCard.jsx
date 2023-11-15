@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 import usePost from "../lib/hooks/posts/usePost";
 
 function PostCard({ id }) {
- 
-  const [post, userPost, likes, handleLike, isLiked ] = usePost(id);
+  const [post, userPost, likes, handleLike, isLiked, isOwner] = usePost(id);
   const [theme] = useTheme();
   const [activeTab, setActiveTab] = useState(null);
-  
+
   return (
     <div className={`container mt-3 p-2 rounded ${theme}`}>
       <div className="row">
@@ -74,6 +73,22 @@ function PostCard({ id }) {
           </div>
           <div className="col">
             <div className="text-end">
+              {isOwner() &&
+                <div className="card-footer">
+                  <div className="d-flex justify-content-end">
+                    <Link to={`/posts/edit/${id}`}
+                      className="btn btn-outline-secondary me-2"
+                    >
+                      <i className="bi bi-pencil-square"></i>
+                    </Link>
+                   <Link to={`/posts/delete/${id}`}
+                      className="btn btn-danger"
+                    >
+                      <i className="bi bi-trash-fill"></i>
+                    </Link>
+                  </div>
+                </div>
+              }
               Posted on {dateFormat(post?.createdAt)}
             </div>
           </div>

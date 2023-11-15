@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import useAuth from "../lib/hooks/global-states/useAuth";
 import useTheme from "../lib/hooks/global-states/useTheme";
 import useSearch from "../lib/hooks/useSearch";
@@ -6,7 +6,8 @@ import useSearch from "../lib/hooks/useSearch";
 function NavBar() {
   const [user, , , signout] = useAuth();
   const [theme, changeTheme] = useTheme();
-  const [searchValue, onSearchChange, handleSearch] = useSearch()
+  const [searchValue, onSearchChange, handleSearch] = useSearch();
+  const location = useLocation()
  
   return (
     <nav
@@ -77,24 +78,26 @@ function NavBar() {
             )}
           </ul>
 
-          {user && (
-            <form
-              onSubmit={handleSearch}
-              className="d-flex mx-auto my-2 my-lg-0 w-50 d-none d-lg-flex"
-            >
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                value={searchValue}
-                onChange={onSearchChange}
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          )}
+          {user &&
+            (location.pathname.startsWith("/posts") ||
+              location.pathname.startsWith("/users")) && (
+              <form
+                onSubmit={handleSearch}
+                className="d-flex mx-auto my-2 my-lg-0 w-50 d-none d-lg-flex"
+              >
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  value={searchValue}
+                  onChange={onSearchChange}
+                />
+                <button className="btn btn-outline-success" type="submit">
+                  Search
+                </button>
+              </form>
+            )}
 
           <div className="d-flex">
             <button
@@ -120,17 +123,6 @@ function NavBar() {
           </div>
         </div>
       </div>
-      <form className="d-lg-none d-flex ms-auto my-2 w-100">
-        <input
-          className="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn btn-outline-success" type="submit">
-          Search
-        </button>
-      </form>
     </nav>
   );
 }

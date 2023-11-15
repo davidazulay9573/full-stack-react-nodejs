@@ -37,7 +37,7 @@ async function signIn(req, res) {
       (user.blockTime - new Date().getTime()) / (1000 * 60 * 60)
     );
     if (blockTo) {
-      res.send(`The account is blocked for another ${blockTo} hours`);
+      sendError(res, 401, `The account is blocked for another ${blockTo} hours`);
       return;
     }
 
@@ -50,10 +50,10 @@ async function signIn(req, res) {
       if (user.loginAttempts >= 3) {
         await blockUser(user);
         await user.updateOne({ loginAttempts: 0 });
-        res.send("Your account is blocked for 24 hours");
+        sendError(res, 401, "Your account is blocked for 24 hours");
         return;
       }
-      sendError(res, 401, "Invalid email or password" + user.loginAttempts);
+      sendError(res, 401, "Invalid email or password");
       return;
     }
 

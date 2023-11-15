@@ -7,11 +7,7 @@ function usePostActions() {
 
   const addPost = async (post) => {
     try {
-      const { image, ...body } = post;
-      if (image) {
-        body.image = image;
-      }
-      await postService.createPost(body);
+      await postService.createPost(post);
       toast.success("The card was created successfully 👌");
       navigate("/posts");
     } catch ({ response }) {

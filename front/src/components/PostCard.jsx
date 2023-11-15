@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import usePost from "../lib/hooks/posts/usePost";
 
 function PostCard({ id }) {
-  const [post, userPost, likes, handleLike, isLiked, isOwner] = usePost(id);
+  const [post, userPost, handleLike, isLiked, isOwner] = usePost(id);
   const [theme] = useTheme();
   const [activeTab, setActiveTab] = useState(null);
 
@@ -66,7 +66,7 @@ function PostCard({ id }) {
                   }
                   className="ms-1"
                 >
-                  {likes.length}
+                  {post?.likes?.length}
                 </span>
               </button>
             </div>
@@ -96,7 +96,7 @@ function PostCard({ id }) {
       </div>
       {activeTab === "likes" && (
         <div>
-          {likes.map((like, index) => (
+          {post?.likes.map((like, index) => (
             <UserCard key={index} id={like.user_id} />
           ))}
         </div>

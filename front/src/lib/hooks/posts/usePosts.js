@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import postService from "../../api-request/posts";
 
-function usePosts(userId) {
+function usePosts(userId, search) {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     (async () => { 
-     const { data } = userId
-       ? await postService.getPosts(userId)
-       : await postService.getPosts();
-     setPosts(data);     
+      if(userId){
+         const { data } =  await postService.getPosts(userId);
+         setPosts(data); 
+         return;    
+      }
+      if(search){
+         const { data } = (await postService.getPosts(null, search));
+         setPosts(data);   
+         return;
+      }
+
+       const { data } = (await postService.getPosts());
+       setPosts(data);   
     })();
-  }, [userId]);
+  }, [userId, search]);
 
   return posts || [];
 }

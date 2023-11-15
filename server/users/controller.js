@@ -23,10 +23,16 @@ async function getUser(req, res) {
 
 async function getUsers(req, res) {
   try {
-      const users = await User.find().select(
-      "-password -__v -loginAttempts -blockTime -isAdmin"
-    );
-    
+    let users = [];
+    const search = req.query.search;
+   if (search) {
+     const searchRegex = new RegExp(search, "i"); 
+     users = await User.find({ name: { $regex: searchRegex } });
+   } else {
+     users = await User.find().select(
+       "-password -__v -loginAttempts -blockTime -isAdmin"
+     );
+   }
     res.send(users);
   } catch (error) {
     sendError(res, 500, `dbError: ${error.message} `);

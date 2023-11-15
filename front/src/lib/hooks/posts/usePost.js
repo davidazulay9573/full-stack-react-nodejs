@@ -12,7 +12,6 @@ function usePost(id) {
   const [userAuth] = useAuth();
   
   useEffect(() => {
-   
     (async () => {
       const { data } = await postService.getPost(id);
       setPost(data);

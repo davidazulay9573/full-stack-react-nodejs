@@ -15,7 +15,6 @@ const {
 router.get(
   "/",
   authentication(),
-  authorization("isContentEditor", "isAdmin"),
   getUsers
 );
 
@@ -24,7 +23,6 @@ router.get("/me", authentication(), getLoggedOnUser);
 router.get(
   "/:id",
   authentication(),
-  authorization("isContentEditor", "isAdmin", "acountOwner"),
   getUser
 );
 

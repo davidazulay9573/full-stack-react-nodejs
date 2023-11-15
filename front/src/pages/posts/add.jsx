@@ -1,8 +1,8 @@
-import Form from "./Form";
+import Form from "../../components/Form";
 import { useFormik } from "formik";
 import Joi from "joi";
-import formikValidation from "../lib/utils/formikValidation";
-import usePostActions from "../lib/hooks/posts/usePostActions";
+import formikValidation from "../../lib/utils/formikValidation";
+import usePostActions from "../../lib/hooks/posts/usePostActions";
 
 export default function AddPost() {
   const [addPost] = usePostActions();

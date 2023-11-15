@@ -9,11 +9,12 @@ import Posts from "./pages/posts";
 import EditCard from "./pages/posts/edit";
 import DeleteCard from "./pages/posts/delete";
 import PostCard from "./pages/posts/[post]";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import NavBar from "./layout/NavBar";
+import Footer from "./layout/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import useTheme from "./lib/hooks/global-states/useTheme";
 import { Routes, Route } from "react-router-dom";
+import AddPost from "./pages/posts/add";
 
 function App() {
   const [theme] = useTheme();
@@ -46,8 +47,16 @@ function App() {
           <Route
             path="posts"
             element={
-              <ProtectedRoute is_only_editor>
+              <ProtectedRoute>
                 <Posts />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="posts/add"
+            element={
+              <ProtectedRoute is_only_editor>
+                <AddPost />
               </ProtectedRoute>
             }
           />

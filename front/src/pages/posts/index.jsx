@@ -1,14 +1,15 @@
 import PageHeader from "../../components/PageHeader";
 import PostCard from "../../components/PostCard";
-import AddPost from "../../components/AddPost";
 import usePosts from "../../lib/hooks/posts/usePosts";
+import { useSearchParams } from "react-router-dom";
 
-function Posts() {
-  const posts = usePosts();
+function SearchPosts() {
+  const [searchParams] = useSearchParams();
+  const posts = usePosts(null, searchParams.get('search'));
+
   return (
     <div className="text-center ">
-      <PageHeader title="Here you can see all posts!"/>
-      <AddPost />
+      <PageHeader title="Posts" description="Here you can see all posts!" />
       {posts.length ? (
         <div className="d-flex flex-wrap p-4 justify-content-center">
           {posts.map((post, index) => {
@@ -16,10 +17,10 @@ function Posts() {
           })}
         </div>
       ) : (
-        <h4>No posts Yet! </h4>    
+        <h4>No posts Yet! </h4>
       )}
     </div>
   );
 }
 
-export default Posts;
+export default SearchPosts;

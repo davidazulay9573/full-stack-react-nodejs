@@ -21,10 +21,21 @@ async function getPost(req, res) {
 
 async function getPosts(req, res) {
   try {
-    const { user } = req.query;
-    const posts = user
-      ? await Post.find({ user_id: user }).select("-__v")
-      : await Post.find().select("-__v");
+    const { user, search} = req.query;
+    let posts = [];
+    if(user){ posts = await Post.find({ user_id: user }).select("-__v")}
+    if (search) {
+      const searchRegex = new RegExp(search, "i"); 
+      posts = await Post.find({
+        $or: [
+          { title: { $regex: searchRegex } },
+          { description: { $regex: searchRegex } },
+        ],
+      });
+    }
+    if(!search && !user){
+      posts = await Post.find()
+    }       
     if (!posts.length) {
       res.send([]);
       return;

@@ -930,3 +930,123 @@
 04:55 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
 04:55 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
 04:56 - Path: /users/6553ed52db9ab58dbff6d68e, Status Code: 500, Message: Data base error: Parameter "obj" to Document() must be an object, got "65542a105432c848698f586b" (type string)
+17:12 - Path: /users, Status Code: 500, Message: dbError: getaddrinfo ENOTFOUND ac-aqpjadi-shard-00-00.qnm5s6s.mongodb.net 
+17:12 - Path: /users, Status Code: 500, Message: dbError: getaddrinfo ENOTFOUND ac-aqpjadi-shard-00-00.qnm5s6s.mongodb.net 
+17:12 - Path: /users, Status Code: 500, Message: dbError: getaddrinfo ENOTFOUND ac-aqpjadi-shard-00-00.qnm5s6s.mongodb.net 
+17:12 - Path: /posts, Status Code: 500, Message: dbError: getaddrinfo ENOTFOUND ac-aqpjadi-shard-00-00.qnm5s6s.mongodb.net 
+18:52 - Path: /auth/sign-in, Status Code: 401, Message: Invalid email or password
+18:52 - Path: /auth/sign-in, Status Code: 401, Message: Invalid email or password
+18:52 - Path: /auth/sign-in, Status Code: 401, Message: Invalid email or password
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users, Status Code: 401, Message: Unauthorized
+18:53 - Path: /users, Status Code: 401, Message: Unauthorized
+18:55 - Path: /users, Status Code: 401, Message: Unauthorized
+18:55 - Path: /users, Status Code: 401, Message: Unauthorized
+18:55 - Path: /users, Status Code: 401, Message: Unauthorized
+18:55 - Path: /users, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:57 - Path: /users/6553ed98db9ab58dbff6d691, Status Code: 401, Message: Unauthorized
+18:58 - Path: /users, Status Code: 401, Message: Unauthorized
+18:58 - Path: /users, Status Code: 401, Message: Unauthorized
+18:58 - Path: /users, Status Code: 401, Message: Unauthorized
+18:58 - Path: /users, Status Code: 401, Message: Unauthorized
+19:25 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:25 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:25 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:25 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:26 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:26 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:26 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:26 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:26 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found
+19:28 - Path: /users/undefined, Status Code: 404, Message: The user with the given ID was not found

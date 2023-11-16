@@ -1,37 +1,30 @@
-# `Card-Actions` project !
+# `Full Stack App`!
 
-Is a system that includes logging in and registering users as a standard or business user,
-
-Includes authentication process using `Json Web Token` technology.
-
-Signing in with a business user allows you to create new posts. and CRUD them.
+Is a system that includes logging in and registering users as a standard or editor user,
+Signing in with a standard user allows you to follow after users and like posts,
+Signing in with a editor user allows you to create new posts. and CRUD them.
 
 ## Server-Side
 
-### Using `node.js` && `express`
+### Using `node.js` && `express` 
 
 To building the server.
 
-### Using `mongo-db`
+### Using `mongo-db` && `mongoose`
 
-To store the data.
+To store the data and building controllers.
 
-### Using `Json Web Token`
-
-To authenticate users
-
-Make sure you have installed `Mongo-DB` before starting the server.
 
 ### Run in terminal :
 
 ```
-cd backe
+cd server
 ```
 
 ```
 npm i
 ```
-
+#### Change the ".env.example" file to ".env" and enter the various variables.
 ```
 npm run dev
 ```
@@ -44,20 +37,11 @@ npm run dev
 
 For building router and navigate between other paths.
 
-You can follow the file names in the Pages folder to understand the router structure,
-each file represents a path.
+You can follow the structure folders in /src/pages to understand the router structure,
 
 ### Using `redux`
 
-For manage the states, and provide globaly states.
-
-### Using `axois`
-
-To manage API requests in an orderly manner.
-
-### Using `bootstrap`, `bootstrap-icons`,`react-tostify`
-
-For styleing.
+For provide globaly states in auth and theme.
 
 ### Run in terminal :
 

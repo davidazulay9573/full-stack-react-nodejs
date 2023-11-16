@@ -6,14 +6,8 @@ Signing in with a editor user allows you to create new posts. and CRUD them.
 
 ## Server-Side
 
-### Using `node.js` && `express` 
-
-To building the server.
-
-### Using `mongo-db` && `mongoose`
-
-To store the data and building controllers.
-
+Using `node.js` && `express` To building the server.
+Using `mongo-db` && `mongoose` To store the data and building controllers.
 
 ### Run in terminal :
 
@@ -31,17 +25,10 @@ npm run dev
 
 ## Client-Side
 
-### The client-side based on `React` framwork.
-
-### Using `react-router-dom`
-
-For building router and navigate between other paths.
-
+The client-side based on `React` framwork.
+Using `react-router-dom` For building router and navigate between other paths.
 You can follow the structure folders in /src/pages to understand the router structure,
-
-### Using `redux`
-
-For provide globaly states in auth and theme.
+Using `redux` For provide globaly states in auth and theme.
 
 ### Run in terminal :
 

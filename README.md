@@ -3,6 +3,7 @@
 Is a system that includes logging in and registering users as a standard or editor user,
 Signing in with a standard user allows you to follow after users and like posts,
 Signing in with a editor user allows you to create new posts. and CRUD them.
+If user signin with same email 3 times with fake password the user will blok to 24 hours.
 
 ## Server-Side
 

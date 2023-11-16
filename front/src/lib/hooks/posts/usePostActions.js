@@ -8,7 +8,7 @@ function usePostActions() {
   const addPost = async (post) => {
     try {
       await postService.createPost(post);
-      toast.success("The card was created successfully 👌");
+      toast.success("The post was created successfully 👌");
       navigate("/posts");
     } catch ({ response }) {
       if (response && response.status === 400) {
@@ -20,7 +20,7 @@ function usePostActions() {
   const deletePost = async (id) => {
     try {
       await postService.deletePost(id);
-      toast.success("The card has been successfully deleted 👌");
+      toast.success("The post has been successfully deleted 👌");
       navigate("/posts");
     } catch {
       navigate("/posts");
@@ -35,7 +35,7 @@ function usePostActions() {
       }
       await postService.updatePost(id, body);
       navigate("/posts");
-      toast.success("The card has been successfully updated 👌");
+      toast.success("The post has been successfully updated 👌");
     } catch ({ response }) {
       if (response && response.status === 400) {
         toast.error(response.data);

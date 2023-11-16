@@ -10,9 +10,9 @@ If user signin with same email 3 times with fake password the user will blok to 
 
 ## Server-Side
 
-Using `node.js` && `express` To building the server.
+Using `node.js` && `express` to building the server.
 
-Using `mongo-db` && `mongoose` To store the data and building controllers.
+Using `mongo-db` && `mongoose` to store the data and building controllers.
 
 ### Run in terminal :
 
@@ -30,13 +30,13 @@ npm run dev
 
 ## Client-Side
 
-The client-side based on `React` framwork.
+The client-side based on React framework.
 
-Using `react-router-dom` For building router and navigate between other paths.
+Using `react-router-dom` for building router and navigate between other paths.
 
 #### You can follow the structure folders in /src/pages to understand the router structure,
 
-Using `redux` For provide globaly states in auth and theme.
+Using `redux` for provide globaly states to auth and theme.
 
 ### Run in terminal :
 

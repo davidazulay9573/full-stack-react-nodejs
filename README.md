@@ -11,6 +11,7 @@ If user signin with same email 3 times with fake password the user will blok to 
 ## Server-Side
 
 Using `node.js` && `express` To building the server.
+
 Using `mongo-db` && `mongoose` To store the data and building controllers.
 
 ### Run in terminal :
@@ -22,7 +23,7 @@ cd server
 ```
 npm i
 ```
-#### Change the ".env.example" file to ".env" and enter the various variables.
+### Change the ".env.example" file to ".env" and enter the various variables.
 ```
 npm run dev
 ```

@@ -9,18 +9,21 @@ function Home() {
 
   return (
     <div className="text-center">
-      <PageHeader title="Wellcome to Post-Actions !" description='In this platfoem you can create update and delete posts, you can also follow after users for see posts. '/>
+      <PageHeader
+        title="Wellcome to Post-Actions !"
+        description="In this platfoem you can create update and delete posts, you can also follow after users for see posts. "
+      />
       {!user && (
         <h5 className="p-2">
           For start you need to <br />
           <Link
-            to="/sign-in"
+            to="/auth/sign-in"
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
             Sign-In
           </Link>
           <Link
-            to="/sign-up"
+            to="/auth/sign-up"
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
             Sign-Up
@@ -35,7 +38,7 @@ function Home() {
             If you want to create posts you need to
           </p>
           <Link
-            to="/sign-up-editor"
+            to="/auth/sign-up-editor"
             onClick={signOut}
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >

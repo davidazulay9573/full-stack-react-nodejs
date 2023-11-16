@@ -7,8 +7,8 @@ function NavBar() {
   const [user, , , signout] = useAuth();
   const [theme, changeTheme] = useTheme();
   const [searchValue, onSearchChange, handleSearch] = useSearch();
-  const location = useLocation()
- 
+  const location = useLocation();
+
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} shadow-sm p-3`}
@@ -57,17 +57,17 @@ function NavBar() {
             {!user && (
               <>
                 <li className="nav-item">
-                  <NavLink to="/sign-in" className="nav-link">
+                  <NavLink to="/auth/sign-in" className="nav-link">
                     Sign In
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/sign-up" className="nav-link">
+                  <NavLink to="/auth/sign-up" className="nav-link">
                     Sign Up
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/sign-up-editor" className="nav-link">
+                  <NavLink to="/auth/sign-up-editor" className="nav-link">
                     Sign Up Editor
                   </NavLink>
                 </li>

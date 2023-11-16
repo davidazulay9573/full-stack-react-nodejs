@@ -59,7 +59,7 @@ function SignIn() {
       {isLoading && <h5>Loading...</h5>}
       <Form inputs={inputs} formik={formik} buttonTitle="Sign-In"></Form>
       <p>
-        Don't have an account yet? <Link to="/sign-up">Sign-up</Link>
+        Don't have an account yet? <Link to="/auth/sign-up">Sign-up</Link>
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ function ProtectedRoute({ children, is_only_editor }) {
 
   if (!user || (is_only_editor && !user?.isContentEditor)) {
     console.log(user?.isContentEditor);
-    return <Navigate to="/sign-in" />;
+    return <Navigate to="/auth/sign-in" />;
   }
   return children;
 }

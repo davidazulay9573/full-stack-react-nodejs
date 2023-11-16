@@ -8,7 +8,7 @@ const UserPage = () => {
   const [theme] = useTheme();
   const { id } = useParams();
   const [user, handleFollow, isFollow ] = useUser(id);
-  const posts = usePosts(id);
+  const [posts, isLoading] = usePosts(id);
 
   return (
     <>
@@ -51,7 +51,7 @@ const UserPage = () => {
             })}
           </div>
         ) : (
-          <h4>No posts Yet! </h4>
+          isLoading ? <h4>Loading...</h4> : <h4>No posts Yet! </h4>
         )}
       </div>
     </>

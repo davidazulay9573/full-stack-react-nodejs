@@ -1,5 +1,4 @@
 import Home from "./pages/home";
-import About from "./pages/about";
 import SignIn from "./pages/auth/sign-in";
 import SignUp from "./pages/auth/sign-up";
 import SignUpEditor from "./pages/auth/sign-up-editor";
@@ -24,12 +23,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="" element={<Home />} />
-          <Route path="about" element={<About />} />
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
           <Route path="sign-up-editor" element={<SignUpEditor />} />
-          <Route
-            path="users"
+          <Route path="users"
             element={
               <ProtectedRoute>
                 <Users />

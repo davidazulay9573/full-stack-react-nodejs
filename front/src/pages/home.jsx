@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <div className="text-center">
-      <PageHeader title="Wellcome to Post-Actions !" />
+      <PageHeader title="Wellcome to Post-Actions !" description='In this platfoem you can create update and delete posts, you can also follow after users for see posts. '/>
       {!user && (
         <h5 className="p-2">
           For start you need to <br />
@@ -30,9 +30,9 @@ function Home() {
       {user && !user?.isContentEditor && (
         <h5 className="p-2">
           <p>
-            In this acount you can only Follow after users and read posts!{" "}
+            In this acount you can only Follow after users and read posts!
             <br />
-            If you want to add posts you need to
+            If you want to create posts you need to
           </p>
           <Link
             to="/sign-up-editor"

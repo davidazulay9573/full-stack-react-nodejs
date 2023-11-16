@@ -35,8 +35,8 @@ router.put(
 
 router.delete(
   "/:id",
-  // authentication(),
-  // authorization("isAdmin", "postOwner"),
+  authentication(),
+  authorization("isAdmin", "postOwner"),
   deletePost
 );
 

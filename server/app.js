@@ -1,5 +1,4 @@
 require("dotenv/config");
-const config = require("config");
 const express = require("express");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
@@ -10,11 +9,7 @@ const postsRouter = require("./posts/route");
 const fileLogger = require("./middleware/fileLogger");
 const sendError = require("./utils/sendError");
 
-const MONGO_URI =
-  config.get("NODE_ENV") === "production"
-    ? config.get("MONGO_URI_ATLAS")
-    : config.get("MONGO_URI_LOCAL");
-
+const MONGO_URI = process.env.MONGO_URI;
 mongoose
   .connect(MONGO_URI)
   .then(() => {
@@ -41,5 +36,5 @@ app.all("*", (req, res) => {
   return;
 });
 
-const PORT = config.get("PORT");
+const PORT = process.env.PORT;
 app.listen(PORT, console.log(chalk.blue("Listening on port", PORT)));

@@ -33,7 +33,7 @@ async function getPosts(req, res) {
           { title: { $regex: searchRegex } },
           { description: { $regex: searchRegex } },
         ],
-      }).sort("-createdAt");;
+      });
     }
     if(!search && !user){
       posts = await Post.find().sort("-createdAt");  

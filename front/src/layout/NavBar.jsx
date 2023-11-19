@@ -11,9 +11,7 @@ function NavBar() {
   const [theme, changeTheme] = useTheme();
   const [searchValue, onSearchChange, handleSearch] = useSearch();
   const location = useLocation();
-  if(userAuth && !userDetailes){
-    window.location.reload()
-  }
+
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} shadow-sm p-3`}

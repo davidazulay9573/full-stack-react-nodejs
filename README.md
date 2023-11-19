@@ -14,6 +14,8 @@ Using `node.js` && `express` to building the server.
 
 Using `mongo-db` && `mongoose` to store the data and building controllers.
 
+Using `Json Web Token` to authenticate users.
+
 ### Run in terminal :
 
 ```
@@ -28,9 +30,10 @@ npm i
 npm run dev
 ```
 
+
 ## Client-Side
 
-The client-side based on React framework.
+The client-side based on `React` framework.
 
 Using `react-router-dom` for building router and navigate between other paths.
 

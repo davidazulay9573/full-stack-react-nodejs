@@ -7,9 +7,10 @@ const {
   getUsers,
   updatedUser,
   deleteUser,
-  followAndDisFollow,
   getLoggedOnUser,
   getUser,
+  followAndDisFollow,
+  switchEditorStatus,
 } = require("./controller");
 
 router.get(
@@ -41,6 +42,6 @@ router.delete(
   deleteUser
 );
 
-router.patch("/:id", authentication(), followAndDisFollow );
-
+router.patch("/:id", authentication(), followAndDisFollow);
+router.patch('/acount/:id', authentication(), switchEditorStatus)
 module.exports = router;

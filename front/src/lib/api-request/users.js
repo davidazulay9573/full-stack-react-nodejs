@@ -11,11 +11,14 @@ function getUsers(search) {
 function followAndDisFollow(id) {
   return httpRequest.patch(`/users/${id}`);
 }
-
+function switchEditorStatus(id){
+  return httpRequest.patch(`/users/acount/${id}`);
+}
 const userService = {
   getUser,
   getUsers,
   followAndDisFollow,
+  switchEditorStatus,
 };
 
 export default userService;

@@ -5,7 +5,7 @@ import useAuth from "../global-states/useAuth";
 function useUser(id) {
    
    const [userCard, setUserCard] = useState(null);
-   const [userAuth] = useAuth()
+   const [userAuth ,,, signOut] = useAuth()
     
    useEffect(() => {
     (async () => {
@@ -21,13 +21,21 @@ function useUser(id) {
   const handleFollow = async() => {
     const response = await userService.followAndDisFollow(id);
     const followers = await response.data;
-    setUserCard({...userCard, followers : followers})   
+    setUserCard({...userCard, followers : followers});
   }
   
   const isFollow = () => {
    return userCard?.followers?.find((user) => user.user_id === userAuth._id);
   }
-  return [userCard, handleFollow, isFollow];
+
+  const handleSwitchEditorStatus = async () => {
+    const response = await userService.switchEditorStatus(id);
+    if(response){
+     signOut();
+    }
+  }
+
+  return [userCard, handleFollow, isFollow, handleSwitchEditorStatus];
 }
 
 export default useUser;

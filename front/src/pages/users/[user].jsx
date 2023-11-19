@@ -8,7 +8,7 @@ import useAuth from "../../lib/hooks/global-states/useAuth";
 const UserPage = () => {
   const [theme] = useTheme();
   const { id } = useParams();
-  const [user, handleFollow, isFollow ] = useUser(id);
+  const [user, handleFollow, isFollow, handleSwitchEditorStatus] = useUser(id);
   const [posts, isLoading] = usePosts(id);
   const [userAuth] = useAuth()
 
@@ -29,7 +29,7 @@ const UserPage = () => {
               <div className="card-body">
                 <h3 className="">{user?.name}</h3>
                 <p className="">{user?.email}</p>
-                {id !== userAuth._id && (
+                {id !== userAuth._id ? (
                   <button
                     onClick={handleFollow}
                     className={`btn ${
@@ -43,6 +43,13 @@ const UserPage = () => {
                       }`}
                     ></i>
                   </button>
+                ) : (
+                  user?.isContentEditor 
+                  ? <p>Your acount is Editor</p> 
+                  : <> 
+                      <button onClick={handleSwitchEditorStatus} className="btn btn-primary">Switch to Editor acount</button>
+                      <p>After you switch the status you need to sign in again!</p>
+                     </> 
                 )}
               </div>
             </div>

@@ -3,7 +3,7 @@ import useAuth from "../lib/hooks/global-states/useAuth";
 import useTheme from "../lib/hooks/global-states/useTheme";
 import { Link } from "react-router-dom";
 function Home() {
-  const [user, , , signOut] = useAuth();
+  const [userAuth,] = useAuth();
 
   const [theme] = useTheme();
 
@@ -11,9 +11,9 @@ function Home() {
     <div className="text-center">
       <PageHeader
         title="Wellcome to Post-Actions !"
-        description="In this platfoem you can create update and delete posts, you can also follow after users for see posts. "
+        description="In this platfoem you can create update and delete posts, you can also follow after userAuths for see posts. "
       />
-      {!user && (
+      {!userAuth && (
         <h5 className="p-2">
           For start you need to <br />
           <Link
@@ -30,19 +30,19 @@ function Home() {
           </Link>
         </h5>
       )}
-      {user && !user?.isContentEditor && (
+      {userAuth && !userAuth?.isContentEditor && (
         <h5 className="p-2">
           <p>
-            In this acount you can only Follow after users and read posts!
+            In this acount you can only Follow after userAuths and read posts!
             <br />
-            If you want to create posts you need to
+            If you want to create posts you need to switch your acount type <br />
+            you need to navigate to personal page.
           </p>
           <Link
-            to="/auth/sign-up-editor"
-            onClick={signOut}
+            to={`/users/${userAuth._id}`}
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
-            Sign-up-Editor
+            Personal 
           </Link>
         </h5>
       )}

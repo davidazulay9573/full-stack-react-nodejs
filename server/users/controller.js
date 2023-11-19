@@ -118,6 +118,28 @@ async function followAndDisFollow(req, res) {
     sendError(res, 500, `Database error: ${error.message}`);
   }
 }
+async function switchEditorStatus(req, res) {
+  try {
+    const user = await User.findOne({ _id: req.params.id });
+    if (!user) {
+      sendError(res, 404, "The user with the given ID was not found");
+      return;
+    }
+    await user.updateOne({ isContentEditor: !user.isContentEditor });
+    console.log(user.isContentEditor);
+    res.send(
+      `The business status switched from ${
+        user.isContentEditor
+      } to ${!user.isContentEditor} `
+    );
+  } catch (error) {
+    if (error.path === "_id") {
+      sendError(res, 404, "The user with the given ID was not found");
+      return;
+    }
+    sendError(res, 500, `dbError: ${error.message} `);
+  }
+}
 
 module.exports = {
   getUser,
@@ -126,4 +148,5 @@ module.exports = {
   updatedUser,
   deleteUser,
   followAndDisFollow,
+  switchEditorStatus,
 };

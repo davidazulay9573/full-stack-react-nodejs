@@ -34,7 +34,7 @@ function usePostActions() {
         body.image = image;
       }
       await postService.updatePost(id, body);
-      navigate("/posts");
+      navigate(`/posts/${id}`);
       toast.success("The post has been successfully updated 👌");
     } catch ({ response }) {
       if (response && response.status === 400) {

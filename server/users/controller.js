@@ -1,6 +1,5 @@
 const { User } = require("./model");
 const sendError = require("../utils/sendError");
-const { default: mongoose } = require("mongoose");
 
 async function getUser(req, res) {
   try {

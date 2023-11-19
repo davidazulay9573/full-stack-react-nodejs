@@ -34,9 +34,10 @@ async function signIn(req, res) {
     }
 
     const blockTo = Math.round(
-      (user.blockTime - new Date().getTime()) / (1000 * 60 * 60)
+
+      (user.blockTime -  Date.now()) / (1000 * 60 * 60)
     );
-    if (blockTo) {
+    if (blockTo > 0) {
       sendError(res, 401, `The account is blocked for another ${blockTo} hours`);
       return;
     }

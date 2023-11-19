@@ -1,5 +1,4 @@
 const { Post } = require("./model");
-const { User } = require('../users/model')
 const sendError = require("../utils/sendError");
 const _ = require("lodash");
 

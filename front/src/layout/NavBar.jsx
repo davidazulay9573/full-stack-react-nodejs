@@ -2,9 +2,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import useAuth from "../lib/hooks/global-states/useAuth";
 import useTheme from "../lib/hooks/global-states/useTheme";
 import useSearch from "../lib/hooks/useSearch";
+import { Link } from "react-router-dom";
+import useUser from "../lib/hooks/users/useUser";
 
 function NavBar() {
-  const [user, , , signout] = useAuth();
+  const [userAuth, , , signout] = useAuth();
+  const [userDetailes] = useUser(userAuth._id)
   const [theme, changeTheme] = useTheme();
   const [searchValue, onSearchChange, handleSearch] = useSearch();
   const location = useLocation();
@@ -14,6 +17,14 @@ function NavBar() {
       className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} shadow-sm p-3`}
     >
       <div className="container-fluid">
+        <Link to={`/users/${userAuth._id}`} className="btn">
+          <img
+            src={userDetailes?.image}
+            className="rounded-circle"
+            alt="Profile"
+            style={{ width: "3rem", height: "3rem" }}
+          />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,7 +44,7 @@ function NavBar() {
                 Home
               </NavLink>
             </li>
-            {user && (
+            {userAuth && (
               <>
                 <li className="nav-item">
                   <NavLink to="/posts" className="nav-link">
@@ -45,7 +56,7 @@ function NavBar() {
                     Users
                   </NavLink>
                 </li>
-                {user.isContentEditor && (
+                {userAuth.isContentEditor && (
                   <li className="nav-item">
                     <NavLink to="/posts/add" className="nav-link">
                       Add Post
@@ -54,7 +65,7 @@ function NavBar() {
                 )}
               </>
             )}
-            {!user && (
+            {!userAuth && (
               <>
                 <li className="nav-item">
                   <NavLink to="/auth/sign-in" className="nav-link">
@@ -75,7 +86,7 @@ function NavBar() {
             )}
           </ul>
 
-          {user &&
+          {userAuth &&
             (location.pathname.startsWith("/posts") ||
               location.pathname.startsWith("/users")) && (
               <form
@@ -107,7 +118,7 @@ function NavBar() {
                 <i className="bi bi-brightness-high-fill"></i>
               )}
             </button>
-            {user && (
+            {userAuth && (
               <button
                 onClick={signout}
                 className={`btn btn-${

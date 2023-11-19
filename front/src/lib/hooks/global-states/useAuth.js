@@ -12,6 +12,7 @@ function useAuth() {
     try {
       await dispatch(login(user)).unwrap();
       navigate(path);
+      window.location.reload();
     } catch (error) {
       toast.error(error);
     }

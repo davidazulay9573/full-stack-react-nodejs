@@ -11,13 +11,15 @@ function NavBar() {
   const [theme, changeTheme] = useTheme();
   const [searchValue, onSearchChange, handleSearch] = useSearch();
   const location = useLocation();
-
+  if(userAuth && !userDetailes){
+    window.location.reload()
+  }
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} shadow-sm p-3`}
     >
       <div className="container-fluid">
-        {userDetailes && (
+        {userAuth && (
           <Link to={`/users/${userAuth?._id}`} className="btn">
             <img
               src={userDetailes?.image}

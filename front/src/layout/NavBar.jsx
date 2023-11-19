@@ -7,7 +7,7 @@ import useUser from "../lib/hooks/users/useUser";
 
 function NavBar() {
   const [userAuth, , , signout] = useAuth();
-  const [userDetailes] = useUser(userAuth._id)
+  const [userDetailes] = useUser(userAuth?._id)
   const [theme, changeTheme] = useTheme();
   const [searchValue, onSearchChange, handleSearch] = useSearch();
   const location = useLocation();
@@ -17,14 +17,16 @@ function NavBar() {
       className={`navbar navbar-expand-lg navbar-${theme} bg-${theme} shadow-sm p-3`}
     >
       <div className="container-fluid">
-        <Link to={`/users/${userAuth._id}`} className="btn">
-          <img
-            src={userDetailes?.image}
-            className="rounded-circle"
-            alt="Profile"
-            style={{ width: "3rem", height: "3rem" }}
-          />
-        </Link>
+        {userDetailes && (
+          <Link to={`/users/${userAuth?._id}`} className="btn">
+            <img
+              src={userDetailes?.image}
+              className="rounded-circle"
+              alt="Profile"
+              style={{ width: "3rem", height: "3rem" }}
+            />
+          </Link>
+        )}
         <button
           className="navbar-toggler"
           type="button"

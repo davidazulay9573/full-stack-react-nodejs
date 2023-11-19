@@ -6,9 +6,13 @@ function useUser(id) {
    
    const [userCard, setUserCard] = useState(null);
    const [userAuth] = useAuth()
-
+    
    useEffect(() => {
     (async () => {
+      if(!id) {
+      setUserCard(null);
+       return;    
+      }
       const { data } = await userService.getUser(id);
       setUserCard(data);
     })();

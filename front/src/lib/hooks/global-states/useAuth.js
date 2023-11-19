@@ -24,15 +24,13 @@ function useAuth() {
 
   const signUp = async (user, path = "/auth/sign-in") => {
     try {
-      const data = await dispatch(register(user)).unwrap();
+      await dispatch(register(user)).unwrap();
       toast.success("The acount was created successfully 👌");
-      console.log(user.isContentEditor);
       if (user.isContentEditor) {
         const { email, password } = user;
         signIn({ email, password }, path);
       }
       navigate(path);
-      console.log(data);
     } catch (error) {
       toast.error(error);
     }

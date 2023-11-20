@@ -17,7 +17,7 @@ function SearchPosts() {
           })}
         </div>
       ) : (
-        isLoading ? <h4>Loading...</h4> : <h4> No posts yet <br />Find user with posts that you like and sdd followers! <br /> Or search in the header tab .</h4>
+        isLoading ? <h4>Loading...</h4> : <h4> No posts yet <br /> <br />Find user with posts that you like and sdd followers! <br /> Or search in the header tab .</h4>
       )}
     </div>
   );

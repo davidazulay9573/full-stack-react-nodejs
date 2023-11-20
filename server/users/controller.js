@@ -126,7 +126,6 @@ async function switchEditorStatus(req, res) {
       return;
     }
     await user.updateOne({ isContentEditor: !user.isContentEditor });
-    console.log(user.isContentEditor);
     res.send(
       `The business status switched from ${
         user.isContentEditor

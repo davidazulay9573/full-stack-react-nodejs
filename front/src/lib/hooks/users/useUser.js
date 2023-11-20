@@ -16,7 +16,7 @@ function useUser(id) {
       const { data } = await userService.getUser(id);
       setUserCard(data);
     })();
-  }, []);
+  }, [id]);
 
   const handleFollow = async() => {
     const response = await userService.followAndDisFollow(id);

@@ -1,4 +1,4 @@
-import Form from "../../components/Form";
+import Form from "../../components/common/Form";
 import { useFormik } from "formik";
 import Joi from "joi";
 import formikValidation from "../../lib/utils/formikValidation";

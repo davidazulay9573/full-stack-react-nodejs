@@ -11,7 +11,7 @@ import EditPost from "./pages/posts/edit";
 import DeletePost from "./pages/posts/delete";
 import NavBar from "./layout/NavBar";
 import Footer from "./layout/Footer";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./layout/ProtectedRoute";
 import useTheme from "./lib/hooks/global-states/useTheme";
 import { Routes, Route } from "react-router-dom";
 

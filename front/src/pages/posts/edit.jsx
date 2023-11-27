@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import Form from "../../components/Form";
-import PageHeader from "../../components/PageHeader";
+import Form from "../../components/common/Form";
+import PageHeader from "../../components/common/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import formikValidation from "../../lib/utils/formikValidation";
@@ -16,14 +16,11 @@ function EditPost() {
 
   useEffect(() => {
     if (!post) return;
-    const {
-      title = "",
-      description = "",
-    } = post;
+    const { title = "", description = "" } = post;
 
     formik.setValues({
       title,
-      description
+      description,
     });
   }, [post]);
 
@@ -36,13 +33,16 @@ function EditPost() {
     initialValues: {
       title: "",
       description: "",
-      
     },
     validate(values) {
       return formikValidation(values)(
         Joi.object({
           title: Joi.string().min(2).max(255).required().label("Name"),
-          description: Joi.string().min(2).max(1024).required().label("Description"),
+          description: Joi.string()
+            .min(2)
+            .max(1024)
+            .required()
+            .label("Description"),
         })
       );
     },

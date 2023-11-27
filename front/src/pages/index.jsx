@@ -1,9 +1,9 @@
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../components/common/PageHeader";
 import useAuth from "../lib/hooks/global-states/useAuth";
 import useTheme from "../lib/hooks/global-states/useTheme";
 import { Link } from "react-router-dom";
 function Home() {
-  const [userAuth,] = useAuth();
+  const [userAuth] = useAuth();
 
   const [theme] = useTheme();
 
@@ -35,14 +35,15 @@ function Home() {
           <p>
             In this acount you can only Follow after userAuths and read posts!
             <br />
-            If you want to create posts you need to switch your acount type <br />
+            If you want to create posts you need to switch your acount type{" "}
+            <br />
             you need to navigate to personal page.
           </p>
           <Link
             to={`/users/${userAuth._id}`}
             className={`btn btn-${theme === "dark" ? "light" : "dark"} m-1`}
           >
-            Personal 
+            Personal
           </Link>
         </h5>
       )}

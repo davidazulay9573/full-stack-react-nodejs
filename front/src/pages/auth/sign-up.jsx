@@ -1,5 +1,5 @@
-import Form from "../../components/Form";
-import PageHeader from "../../components/PageHeader";
+import Form from "../../components/common/Form";
+import PageHeader from "../../components/common/PageHeader";
 import { useFormik } from "formik";
 import Joi from "joi";
 import {

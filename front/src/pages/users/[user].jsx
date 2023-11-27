@@ -2,7 +2,7 @@ import useTheme from "../../lib/hooks/global-states/useTheme";
 import { useParams } from "react-router-dom";
 import useUser from "../../lib/hooks/users/useUser";
 import usePosts from "../../lib/hooks/posts/usePosts";
-import PostCard from "../../components/PostCard";
+import PostCard from "../../components/common/PostCard";
 import useAuth from "../../lib/hooks/global-states/useAuth";
 
 const UserPage = () => {
@@ -10,7 +10,7 @@ const UserPage = () => {
   const { id } = useParams();
   const [user, handleFollow, isFollow, handleSwitchEditorStatus] = useUser(id);
   const [posts, isLoading] = usePosts(id);
-  const [userAuth] = useAuth()
+  const [userAuth] = useAuth();
 
   return (
     <>
@@ -43,13 +43,20 @@ const UserPage = () => {
                       }`}
                     ></i>
                   </button>
+                ) : user?.isContentEditor ? (
+                  <p>Your acount is Editor</p>
                 ) : (
-                  user?.isContentEditor 
-                  ? <p>Your acount is Editor</p> 
-                  : <> 
-                      <button onClick={handleSwitchEditorStatus} className="btn btn-primary">Switch to Editor acount</button>
-                      <p>After you switch the status you need to sign in again!</p>
-                     </> 
+                  <>
+                    <button
+                      onClick={handleSwitchEditorStatus}
+                      className="btn btn-primary"
+                    >
+                      Switch to Editor acount
+                    </button>
+                    <p>
+                      After you switch the status you need to sign in again!
+                    </p>
+                  </>
                 )}
               </div>
             </div>

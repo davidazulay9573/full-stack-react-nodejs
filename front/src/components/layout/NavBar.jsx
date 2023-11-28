@@ -1,9 +1,8 @@
-import { NavLink, useLocation } from "react-router-dom";
-import useAuth from "../lib/hooks/global-states/useAuth";
-import useTheme from "../lib/hooks/global-states/useTheme";
-import useSearch from "../lib/hooks/useSearch";
-import { Link } from "react-router-dom";
-import useUser from "../lib/hooks/users/useUser";
+import {Link, NavLink, useLocation } from "react-router-dom";
+import useAuth from "../../lib/hooks/global-states/useAuth";
+import useTheme from "../../lib/hooks/global-states/useTheme";
+import useSearch from "../../lib/hooks/useSearch";
+import useUser from "../../lib/hooks/users/useUser";
 
 function NavBar() {
   const [userAuth, , , signout] = useAuth();

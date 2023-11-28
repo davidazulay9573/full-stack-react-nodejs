@@ -5,14 +5,11 @@ import useAuth from "../global-states/useAuth";
 function useUser(id) {
    
    const [userCard, setUserCard] = useState(null);
-   const [userAuth ,,, signOut] = useAuth()
+   const [userAuth ,,, signOut] = useAuth();
     
    useEffect(() => {
     (async () => {
-      if(!id) {
-      setUserCard(null);
-       return;    
-      }
+      if(!id) return;    
       const { data } = await userService.getUser(id);
       setUserCard(data);
     })();

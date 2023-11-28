@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-function useSearch( ){
+function useSearch(){
   
     const [searchValue, setSearchValue] = useState("");
     const navigate = useNavigate();

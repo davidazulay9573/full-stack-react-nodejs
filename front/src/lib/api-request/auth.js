@@ -1,7 +1,7 @@
 import httpRequest from "./http";
 import jwtDecode from "jwt-decode";
+import Cookies from "js-cookie";
 
-const TOKEN_LS_KEY = "token";
 
 function setCommonHeader() {
   httpRequest.setCommonHeader("x-auth-token", getJWT());
@@ -15,17 +15,17 @@ export function createUser(user) {
 export async function login(user) {
   const response = await httpRequest.post("/auth/sign-in", user);
   const token = await response.data.token;
-  localStorage.setItem(TOKEN_LS_KEY, token);
+  Cookies.set("token", token, { expires: 7, secure: true });
   setCommonHeader();
   return response;
 }
 
 export function logOut() {
-  localStorage.removeItem(TOKEN_LS_KEY);
+  Cookies.remove('token');
 }
 
 function getJWT() {
-  return localStorage.getItem(TOKEN_LS_KEY);
+  return Cookies.get('token');
 }
 
 function getLoggedonUser() {

@@ -8,6 +8,8 @@ Signing in with a editor user allows you to create new posts. and CRUD them.
 
 If user signin with same email 3 times with fake password the user will blok to 24 hours.
 
+See Deployment https://fs-front-z2fz.onrender.com/
+
 ## Server-Side
 
 Using `node.js` && `express` to building the server.

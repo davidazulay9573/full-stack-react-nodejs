@@ -17,13 +17,20 @@ const UserPage = () => {
     <>
       <div className={` container mt-5 p-3 rounded ${theme} text-center`}>
         <div className="row">
-          <div className="col-md-4 text-center">
+          <div className="col-md-4 text-center">     
+          <div className="d-flex flex-column align-items-center mb-2">
+            <span
+              className={`rounded-circle border border-2 ${theme === 'dark' ? 'border-light' : 'border-dark'}`}
+              style={{ width: "4rem", height: "4rem"}}
+            >
             <img
               src={user?.image}
-              className="rounded-circle img-fluid"
+              className="rounded-circle"
               alt="Profile"
-              style={{ width: "8rem", height: "8rem" }}
+              style={{ width: '100%', height: '100%', objectFit: "cover" }}
             />
+            </span>
+          </div>
           </div>
           <div className="col-md-8">
             <div className="ms-2 me-2 mt-1 mb-1 ">

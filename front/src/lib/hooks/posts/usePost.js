@@ -27,7 +27,7 @@ function usePost(id) {
   
   const isLiked = post?.likes?.find((like) => like.user_id === userAuth._id);
 
-  const isOwner = post.user_id === userAuth._id;
+  const isOwner = post?.user_id === userAuth._id;
 
   return [post, userPost, handleLike, isLiked, isOwner];
 }

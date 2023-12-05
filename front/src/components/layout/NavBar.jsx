@@ -17,14 +17,22 @@ function NavBar() {
     >
       <div className="container-fluid">
         {userAuth && (
-          <Link to={`/users/${userAuth?._id}`} className="btn">
+           <Link to={`/users/${userAuth._id}`} className="text-decoration-none">
+          <div className="d-flex flex-column align-items-center">
+            <span
+              className={`rounded-circle border border-2 ${theme === 'dark' ? 'border-light' : 'border-dark'}`}
+              style={{ width: "3rem", height: "3rem"}}
+            >
             <img
               src={userDetailes?.image}
               className="rounded-circle"
               alt="Profile"
-              style={{ width: "3rem", height: "3rem" }}
+              style={{ width: '100%', height: '100%', objectFit: "cover" }}
             />
-          </Link>
+            </span>
+            
+          </div>
+        </Link>
         )}
         <button
           className="navbar-toggler"

@@ -9,17 +9,22 @@ const UserCard = ({ id , buttonDisplay}) => {
   const [user, handleFollow, isFollow] = useUser(id);
  
   return (
-    <div
-      className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 rounded ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}
-    >
+    <div className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 rounded ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
       <div className="d-flex align-items-center">
-        <Link to={`/users/${id}`}>
-          <img
-            src={user?.image}
-            className="rounded-circle img-fluid"
-            alt="Profile"
-            style={{ width: "4rem", height: "4rem" }}
-          />
+        <Link to={`/users/${id}`} className="text-decoration-none">
+          <div className="d-flex flex-column align-items-center">
+            <span
+              className={`rounded-circle border border-2 ${theme === 'dark' ? 'border-light' : 'border-dark'}`}
+              style={{ width: "4rem", height: "4rem"}}
+            >
+            <img
+              src={user?.image}
+              className="rounded-circle"
+              alt="Profile"
+              style={{ width: '100%', height: '100%', objectFit: "cover" }}
+            />
+            </span>
+          </div>
         </Link>
         <div className="flex-grow-1 ms-3">
           <h5 className="card-title text-center">{user?.name}</h5>

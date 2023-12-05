@@ -92,7 +92,8 @@ function NavBar() {
               location.pathname.startsWith("/users")) && (
               <form
                 onSubmit={handleSearch}
-                className="d-flex mx-auto my-2 my-lg-0 w-50 d-none d-lg-flex"
+                className="d-flex mx-auto my-2 my-lg-0 d-lg-flex"
+                d-flex mx-auto my-2 my-lg-0 w-50
               >
                 <input
                   className="form-control me-2"

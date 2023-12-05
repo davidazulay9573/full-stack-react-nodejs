@@ -45,7 +45,7 @@ function usePosts(userId, search) {
      setLoading(false);
      }
     })();
-  }, []);
+  }, [userId]);
 
   return [posts, isLoading] ;
 }

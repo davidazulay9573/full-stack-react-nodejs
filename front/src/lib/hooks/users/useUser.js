@@ -21,7 +21,7 @@ function useUser(id) {
     setUserCard({...userCard, followers : followers});
   }
   
-  const isFollow = userCard?.followers?.find((user) => user.user_id === userAuth._id);
+  const isFollow = userCard?.followers?.find((user) => user.user_id === userAuth?._id);
 
   const handleSwitchEditorStatus = async () => {
     const response = await userService.switchEditorStatus(id);

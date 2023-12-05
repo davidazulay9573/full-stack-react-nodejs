@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import usePostActions from "../../lib/hooks/posts/usePostActions";
+
 function DeletePost() {
   const { id } = useParams();
   const [, , deletePost] = usePostActions();

@@ -7,6 +7,7 @@ const UserCard = ({ id }) => {
   const [theme] = useTheme();
   const [userAuth] = useAuth();
   const [user, handleFollow, isFollow] = useUser(id);
+ 
   return (
     <div
       className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 bg-body-tertiary rounded ${theme}`}

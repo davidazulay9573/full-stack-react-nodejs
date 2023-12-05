@@ -52,6 +52,7 @@ cd front
 ```
 npm i
 ```
+### Change the ".env.example" file to ".env" and enter the various variables.
 
 ```
 npm start

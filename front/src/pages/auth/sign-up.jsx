@@ -55,7 +55,7 @@ function SignUp() {
   if (user) return <Navigate to="/" />;
   return (
     <div>
-      <div className="container-md w-50 text-center">
+      <div className="col-12 col-lg-6 mx-auto text-center">
         <PageHeader
           title="Sign Up"
           description="Please enter your details! "

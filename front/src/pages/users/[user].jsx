@@ -11,10 +11,10 @@ const UserPage = () => {
   const [user, handleFollow, isFollow, handleSwitchEditorStatus] = useUser(id);
   const [posts, isLoading] = usePosts(id);
   const [userAuth] = useAuth();
-
+  const isUserAuth = id == userAuth._id;
   return (
     <>
-      <div className={`container mt-5 p-3 rounded ${theme}`}>
+      <div className={` container mt-5 p-3 rounded ${theme} text-center`}>
         <div className="row">
           <div className="col-md-4 text-center">
             <img
@@ -29,7 +29,21 @@ const UserPage = () => {
               <div className="card-body">
                 <h3 className="">{user?.name}</h3>
                 <p className="">{user?.email}</p>
-                {id !== userAuth._id ? (
+                {isUserAuth &&  user?.isContentEditor && 
+                 <p>Your acount is Editor</p> }
+                {isUserAuth && user?.isContentEditor === false &&  
+                 <>
+                    <button
+                      onClick={handleSwitchEditorStatus}
+                      className="btn btn-primary"
+                    >
+                      Switch to Editor acount
+                    </button>
+                    <p>
+                      After you switch the status you need to sign in again!
+                    </p>
+                  </>}
+                {!isUserAuth && (
                   <button
                     onClick={handleFollow}
                     className={`btn ${
@@ -43,20 +57,6 @@ const UserPage = () => {
                       }`}
                     ></i>
                   </button>
-                ) : user?.isContentEditor ? (
-                  <p>Your acount is Editor</p>
-                ) : (
-                  <>
-                    <button
-                      onClick={handleSwitchEditorStatus}
-                      className="btn btn-primary"
-                    >
-                      Switch to Editor acount
-                    </button>
-                    <p>
-                      After you switch the status you need to sign in again!
-                    </p>
-                  </>
                 )}
               </div>
             </div>

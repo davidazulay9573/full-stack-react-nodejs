@@ -52,7 +52,7 @@ function EditPost() {
   });
 
   return (
-    <div className="container-md w-50 text-center">
+    <div className="col-12 col-lg-6 mx-auto text-center">
       <PageHeader
         title="Edit Your post"
         description="Please fill in the new details! "

@@ -36,7 +36,7 @@ export default function AddPost() {
   });
 
   return (
-    <div className="container text-center">
+    <div className="col-12 col-lg-6 mx-auto text-center">
       <p className=" m-4">Add A New Post</p>
       <Form inputs={inputs} formik={formik} buttonTitle="add"></Form>
     </div>

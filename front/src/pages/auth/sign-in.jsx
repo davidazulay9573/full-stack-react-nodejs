@@ -50,7 +50,7 @@ function SignIn() {
   });
   if (user) return <Navigate to="/" />;
   return (
-    <div className="container-md w-50 text-center">
+    <div className="col-12 col-lg-6 mx-auto text-center">
       <PageHeader
         title="Sign In"
         description="Please enter your details!"

@@ -71,7 +71,7 @@ const UserPage = () => {
           </div>
         </div>
       </div>
-      <div className="text-center m-2 p-2">
+      <div className="text-center">
         {posts.length ? (
           <div className="d-flex flex-wrap p-4 justify-content-center">
             {posts.map((post) => {

@@ -44,10 +44,10 @@ function PostCard({ id }) {
       <div className={`card-footer ${theme === 'dark' ? 'bg-dark' : 'bg-light'} text-muted d-flex justify-content-between align-items-center`}>
         <div>
           <span onClick={handleLike} className="cursor-pointer">
-            <i className={`bi ${isLiked() ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'} ${theme === 'dark' ? 'text-white' : 'text-primary'} me-2`}></i>
+            <i className={`bi ${isLiked ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'} ${theme === 'dark' ? 'text-white' : 'text-primary'} me-2`}></i>
           </span>
-          <span onClick={() => {setActiveTab((activeTab) =>  activeTab == 'likes' ? null : 'likes')}}>{post?.likes?.length}</span>
-          {isOwner() && (
+          <span onClick={() => {setActiveTab((activeTab) =>  activeTab === 'likes' ? null : 'likes')}}>{post?.likes?.length}</span>
+          {isOwner && (
             <span className="mx-3">
               <Link to={`/posts/edit/${id}`} className={`btn btn-outline-${theme === 'dark' ? 'light' : 'secondary'} me-2`}>
                 <i className="bi bi-pencil-square"></i>

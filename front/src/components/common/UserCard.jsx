@@ -27,12 +27,12 @@ const UserCard = ({ id }) => {
         {id !== userAuth._id && (
           <button
             onClick={handleFollow}
-            className={`btn ${isFollow() ? "btn-danger" : "btn-primary"}`}
+            className={`btn ${isFollow ? "btn-danger" : "btn-primary"}`}
           >
-            {isFollow() ? "Unfollow" : "Follow"}
+            {isFollow ? "Unfollow" : "Follow"}
             <i
               className={`bi ${
-                isFollow() ? "bi-person-x-fill" : "bi-person-plus-fill"
+                isFollow ? "bi-person-x-fill" : "bi-person-plus-fill"
               }`}
             ></i>
           </button>

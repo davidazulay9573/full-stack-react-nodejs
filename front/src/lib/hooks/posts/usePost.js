@@ -18,19 +18,16 @@ function usePost(id) {
     })();
   }, []);
 
-  const isLiked = () => {
-    return post?.likes?.find((like) => like.user_id === userAuth._id);
-  };
 
   const handleLike = async () => {
     const response = await postService.LikeAndDisLike(id);
     const likesRes = await response.data;
     setPost((post) => ({ ...post, likes: likesRes }));
   };
+  
+  const isLiked = post?.likes?.find((like) => like.user_id === userAuth._id);
 
-  const isOwner = () => {
-    return post.user_id === userAuth._id;
-  };
+  const isOwner = post.user_id === userAuth._id;
 
   return [post, userPost, handleLike, isLiked, isOwner];
 }

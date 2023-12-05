@@ -6,12 +6,13 @@ import PostCard from "../../components/common/PostCard";
 import useAuth from "../../lib/hooks/global-states/useAuth";
 
 const UserPage = () => {
-  const [theme] = useTheme();
   const { id } = useParams();
   const [user, handleFollow, isFollow, handleSwitchEditorStatus] = useUser(id);
   const [posts, isLoading] = usePosts(id);
   const [userAuth] = useAuth();
-  const isUserAuth = id == userAuth._id;
+  const isUserAuth = id === userAuth._id;
+  const [theme] = useTheme();
+
   return (
     <>
       <div className={` container mt-5 p-3 rounded ${theme} text-center`}>
@@ -47,13 +48,13 @@ const UserPage = () => {
                   <button
                     onClick={handleFollow}
                     className={`btn ${
-                      isFollow() ? "btn-danger" : "btn-primary"
+                      isFollow ? "btn-danger" : "btn-primary"
                     }`}
                   >
-                    {isFollow() ? "Unfollow" : "Follow"}
+                    {isFollow ? "Unfollow" : "Follow"}
                     <i
                       className={`bi ${
-                        isFollow() ? "bi-person-x-fill" : "bi-person-plus-fill"
+                        isFollow ? "bi-person-x-fill" : "bi-person-plus-fill"
                       }`}
                     ></i>
                   </button>

@@ -2,7 +2,6 @@ import httpRequest from "./http";
 import jwtDecode from "jwt-decode";
 import Cookies from "js-cookie";
 
-
 function setCommonHeader() {
   httpRequest.setCommonHeader("x-auth-token", getJWT());
 }

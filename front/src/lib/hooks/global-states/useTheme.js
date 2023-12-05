@@ -1,4 +1,4 @@
-import { changeThemeMode } from "../../../store/slices/theme.slice";
+import { changeThemeMode } from "../../store/slices/theme.slice";
 import { useSelector, useDispatch } from "react-redux";
 
 function useTheme() {

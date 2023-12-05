@@ -1,4 +1,4 @@
-import { register, login, logout } from "../../../store/slices/auth.slice";
+import { register, login, logout } from "../../store/slices/auth.slice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";

@@ -13,7 +13,6 @@ function PostCard({ id }) {
   return (
     <div className={`container mt-3 p-3 rounded shadow-sm ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}>
       <div className="row g-3">
-        <div className="col-auto">
           <Link to={`/users/${post.user_id}`} className="text-decoration-none">
               <img
               src={userPost?.image}
@@ -23,8 +22,7 @@ function PostCard({ id }) {
               />
             <p className={`mt-2 fw-bold ${theme === 'dark' ? 'text-white' : 'text-dark'}`}>{userPost?.name}</p>
           </Link>
-        </div>
-        <div className="col">
+        <div className="col pb-4">
           {post?.image && (
             <img
               src={post?.image}
@@ -41,7 +39,7 @@ function PostCard({ id }) {
           </div>
         </div>
       </div>
-      <div className={`card-footer ${theme === 'dark' ? 'bg-dark' : 'bg-light'} text-muted d-flex justify-content-between align-items-center`}>
+      <div className={`card-footer ${theme === 'dark' ? 'bg-dark' : 'bg-light'} text-muted d-flex justify-content-between align-items-center `}>
         <div>
           <span onClick={handleLike} className="cursor-pointer">
             <i className={`bi ${isLiked ? 'bi-hand-thumbs-up-fill' : 'bi-hand-thumbs-up'} ${theme === 'dark' ? 'text-white' : 'text-primary'} me-2`}></i>
@@ -65,7 +63,7 @@ function PostCard({ id }) {
       {activeTab === "likes" && (
         <div className="mt-3">
           {post?.likes.map((like, index) => (
-            <UserCard key={index} id={like.user_id} />
+            <UserCard key={index} id={like.user_id} buttonDisplay={false} />
           ))}
         </div>
       )}

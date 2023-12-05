@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import useUser from "../../lib/hooks/users/useUser";
 import useAuth from "../../lib/hooks/global-states/useAuth";
 
-const UserCard = ({ id }) => {
+const UserCard = ({ id , buttonDisplay}) => {
   const [theme] = useTheme();
   const [userAuth] = useAuth();
   const [user, handleFollow, isFollow] = useUser(id);
  
   return (
     <div
-      className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 bg-body-tertiary rounded ${theme}`}
+      className={`card ms-2 me-2 mt-1 mb-1 shadow p-2 rounded ${theme === 'dark' ? 'bg-dark text-white' : 'bg-light text-dark'}`}
     >
       <div className="d-flex align-items-center">
         <Link to={`/users/${id}`}>
@@ -24,7 +24,7 @@ const UserCard = ({ id }) => {
         <div className="flex-grow-1 ms-3">
           <h5 className="card-title text-center">{user?.name}</h5>
         </div>
-        {id !== userAuth._id && (
+         { buttonDisplay && id !== userAuth._id && (
           <button
             onClick={handleFollow}
             className={`btn ${isFollow ? "btn-danger" : "btn-primary"}`}

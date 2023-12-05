@@ -12,7 +12,7 @@ function Users() {
       <PageHeader title="Users" description="Heare you can see all users" />
       {users.length ? (
         users.map((user, index) => {
-          return <UserCard key={index} id={user._id} />;
+          return <UserCard key={index} id={user._id} buttonDisplay={true}/>;
         })
       ) : isLoading ? (
         <h4>Loading...</h4>
